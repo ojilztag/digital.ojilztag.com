@@ -271,7 +271,7 @@
   </main>
 
   <footer class="footer"><div class="wrap footerin"><div><strong>OJILZTAG.COM</strong><br> Your Complete Digitalization &amp; Technology Partner.<br><small>© <span id="year"></span> OJILZTAG.COM. All rights reserved.</small></div><div class="footerlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="#" onclick="alert('Add your Privacy Policy page URL before publishing.');return false;">Privacy Policy</a><a href="#" onclick="alert('Add your Terms & Conditions page URL before publishing.');return false;">Terms</a></div></div></footer>
-  <a class="btn float emoji-float" id="whatsappFloat" href="#contact" aria-label="Contact OJILZTAG" title="Contact OJILZTAG">💬</a>
+  <button class="scroll-toggle" id="scrollToggle" type="button" aria-label="Scroll to bottom" title="Scroll to bottom">↓</button>
 
   <script>
     // ================= OJILZTAG WEBSITE CONFIGURATION =================
@@ -294,11 +294,20 @@
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const waFloat = document.getElementById('whatsappFloat');
-    if (CONFIG.whatsappNumber) {
-      waFloat.href = 'https://wa.me/' + CONFIG.whatsappNumber;
-      waFloat.target = '_blank'; waFloat.rel = 'noopener';
+    const scrollToggle = document.getElementById('scrollToggle');
+    function updateScrollToggle() {
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120;
+      scrollToggle.textContent = nearBottom ? '↑' : '↓';
+      scrollToggle.setAttribute('aria-label', nearBottom ? 'Scroll to top' : 'Scroll to bottom');
+      scrollToggle.title = nearBottom ? 'Scroll to top' : 'Scroll to bottom';
     }
+    scrollToggle.addEventListener('click', () => {
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120;
+      window.scrollTo({top: nearBottom ? 0 : document.documentElement.scrollHeight, behavior: 'smooth'});
+    });
+    window.addEventListener('scroll', updateScrollToggle, {passive:true});
+    window.addEventListener('resize', updateScrollToggle);
+    updateScrollToggle();
 
     document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', () => {
       const service = link.getAttribute('data-service');
