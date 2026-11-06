@@ -344,16 +344,18 @@
         }
       } else if (CONFIG.whatsappNumber) {
         const text = encodeURIComponent(
-          '👋 New enquiry from OJILZTAG.COM\n\n' +
-          '*Customer details*\n' +
+          '*OJILZTAG.COM — NEW ENQUIRY*\n' +
+          '━━━━━━━━━━━━━━━━━━\n\n' +
+          '*Customer Details*\n' +
           'Name: ' + data.name + '\n' +
-          'Mobile / WhatsApp: ' + data.phone + '\n' +
+          'Mobile: ' + data.phone + '\n' +
           'Email: ' + (data.email || 'Not provided') + '\n\n' +
-          '*Service required*\n' +
+          '*Service Required*\n' +
           data.service + '\n\n' +
-          '*Project details*\n' +
+          '*Project Details*\n' +
           data.message + '\n\n' +
-          'Website: digital.ojilztag.com\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
+          'Source: digital.ojilztag.com\n' +
           'OJILZTAG.COM | Digitalization & Technology Partner'
         );
         const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text;
