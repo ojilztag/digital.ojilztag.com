@@ -333,16 +333,16 @@
         }
       } else if (CONFIG.whatsappNumber) {
         const text = encodeURIComponent(
-          '*OJILZTAG.COM — NEW ENQUIRY*\\n' +
-          '━━━━━━━━━━━━━━━━━━\\n\\n' +
-          '*Customer Details*\\n' +
-          'Name: ' + data.name + '\\n' +
-          'Mobile: ' + data.phone + '\\n' +
-          'Email: ' + (data.email || 'Not provided') + '\\n\\n' +
-          '*Service Required*\\n' + data.service + '\\n\\n' +
-          '*Project Details*\\n' + data.message + '\\n\\n' +
-          '━━━━━━━━━━━━━━━━━━\\n' +
-          'Source: digital.ojilztag.com\\n' +
+          '*OJILZTAG.COM — NEW ENQUIRY*\n' +
+          '━━━━━━━━━━━━━━━━━━\n\n' +
+          '*Customer Details*\n' +
+          'Name: ' + data.name + '\n' +
+          'Mobile: ' + data.phone + '\n' +
+          'Email: ' + (data.email || 'Not provided') + '\n\n' +
+          '*Service Required*\n' + data.service + '\n\n' +
+          '*Project Details*\n' + data.message + '\n\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
+          'Source: digital.ojilztag.com\n' +
           'OJILZTAG.COM | Digitalization & Technology Partner'
         );
         const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text;
