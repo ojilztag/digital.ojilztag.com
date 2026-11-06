@@ -344,13 +344,19 @@
         }
       } else if (CONFIG.whatsappNumber) {
         const text = encodeURIComponent(
-          '👋 New enquiry from OJILZTAG.COM\n\n' +
-          'Customer details\n' +
+          '👋 *New enquiry from OJILZTAG.COM*\n\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
+          '*Customer details*\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
           'Name: ' + data.name + '\n' +
           'Mobile / WhatsApp: ' + data.phone + '\n' +
           'Email: ' + (data.email || 'Not provided') + '\n\n' +
-          'Service required\n' + data.service + '\n\n' +
-          'Project details\n' + data.message + '\n\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
+          '*Service required*\n' +
+          '━━━━━━━━━━━━━━━━━━\n' + data.service + '\n\n' +
+          '━━━━━━━━━━━━━━━━━━\n' +
+          '*Project details*\n' +
+          '━━━━━━━━━━━━━━━━━━\n' + data.message + '\n\n' +
           'Website: digital.ojilztag.com\n' +
           'OJILZTAG.COM | Digitalization & Technology Partner'
         );
