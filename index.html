@@ -277,7 +277,7 @@
     // ================= OJILZTAG WEBSITE CONFIGURATION =================
     // Update these values before publishing to GitHub Pages / Hostinger.
     const CONFIG = {
-      whatsappNumber: "", // Example: "919876543210" (country code + number, digits only)
+      whatsappNumber: "919447342070", // OJILZTAG.COM WhatsApp enquiry number
       contactEmail: "",   // Example: "support@ojilztag.com"
       formEndpoint: ""    // Optional HTTPS Google Apps Script Web App URL or form API endpoint
     };
@@ -333,9 +333,18 @@
         }
       } else if (CONFIG.whatsappNumber) {
         const text = encodeURIComponent(
-          'Hello OJILZTAG.COM! I would like to enquire about your services.\n\n' +
-          'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + (data.email || 'Not provided') +
-          '\nService: ' + data.service + '\nDetails: ' + data.message
+          '✨ OJILZTAG.COM | NEW PROJECT ENQUIRY ✨\n' +
+          '━━━━━━━━━━━━━━━━━━━━\n' +
+          '🚀 Let’s turn an idea into digital reality!\n\n' +
+          '👤 CUSTOMER DETAILS\n' +
+          'Name: ' + data.name + '\n' +
+          '📱 WhatsApp / Mobile: ' + data.phone + '\n' +
+          '✉️ Email: ' + (data.email || 'Not provided') + '\n\n' +
+          '🛠️ SERVICE REQUIRED\n' + data.service + '\n\n' +
+          '📝 PROJECT REQUIREMENTS\n' + data.message + '\n\n' +
+          '━━━━━━━━━━━━━━━━━━━━\n' +
+          '📩 Sent through digital.ojilztag.com\n' +
+          'OJILZTAG.COM – Your Digitalization & Technology Partner'
         );
         window.open('https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text, '_blank', 'noopener');
         status.textContent = 'Your enquiry is ready in WhatsApp. Please press Send in WhatsApp to complete it.';
