@@ -130,8 +130,10 @@
     .starting-price{display:flex;align-items:baseline;gap:6px;margin-top:15px;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
     .starting-price strong{font-size:1.12rem;color:#fff;letter-spacing:-.02em}
     .price-note{margin-top:18px;padding:15px 17px;border:1px solid rgba(99,234,219,.2);border-radius:14px;background:rgba(48,177,166,.07);color:var(--muted);font-size:.84rem}
-    .emoji-float{width:54px;height:54px;padding:0;border-radius:50%;font-size:1.45rem;box-shadow:0 10px 28px rgba(0,0,0,.35)}
-    @media(max-width:600px){.emoji-float{width:50px;height:50px;font-size:1.35rem}}
+    .scroll-toggle{position:fixed;right:16px;bottom:16px;z-index:30;width:42px;height:42px;padding:0;border:1px solid rgba(125,190,255,.35);border-radius:50%;display:grid;place-items:center;background:rgba(12,32,55,.92);color:#dff7ff;font-size:1.35rem;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.3);backdrop-filter:blur(10px);cursor:pointer;transition:transform .2s,background .2s}
+    .scroll-toggle:hover{transform:translateY(-2px);background:#173c60}
+    .scroll-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+    @media(max-width:600px){.scroll-toggle{right:12px;bottom:12px;width:38px;height:38px;font-size:1.2rem}}
 
   </style>
 </head>
