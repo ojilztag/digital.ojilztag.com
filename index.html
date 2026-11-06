@@ -261,7 +261,7 @@
               <label>Service Required *<select name="service" required><option value="">Select a service</option><option>Website Development</option><option>Web Application</option><option>Domain, Hosting & Cloud</option><option>Business Digitalization</option><option>Classifieds & Online Platform</option><option>Event Hosting & Management</option><option>Online Registration / Competition</option><option>Automation & AI Solutions</option><option>API & Technology Integration</option><option>Creative Design & Branding</option><option>Digital Marketing & Promotion</option><option>Multimedia & Content</option><option>Custom Digital Project</option><option>Technical Support</option><option>Other</option></select></label>
               <label class="full">Project Details *<textarea name="message" required placeholder="Briefly describe your idea, required features, budget range (optional) and timeline (optional)."></textarea></label>
               <button class="btn full" type="submit">Send Enquiry ↗</button>
-              <p class="form-note">The form can open WhatsApp or submit to your configured endpoint. Add your contact details in the CONFIG section before publishing.</p>
+              <p class="form-note">Submit this form to open WhatsApp with your complete enquiry details pre-filled. Review the message and press Send.</p>
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -346,8 +346,10 @@
           '📩 Sent through digital.ojilztag.com\n' +
           'OJILZTAG.COM – Your Digitalization & Technology Partner'
         );
-        window.open('https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text, '_blank', 'noopener');
-        status.textContent = 'Your enquiry is ready in WhatsApp. Please press Send in WhatsApp to complete it.';
+        const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text;
+        status.textContent = 'Opening WhatsApp with your complete enquiry. Please review and press Send.';
+        // Navigate in the same tab to avoid mobile-browser popup blocking.
+        window.location.assign(whatsappUrl);
       } else if (CONFIG.contactEmail) {
         window.location.href = 'mailto:' + CONFIG.contactEmail + '?subject=' + subject + '&body=' + body;
         status.textContent = 'Your email app is opening. Send the prepared enquiry to complete the request.';
