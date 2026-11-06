@@ -333,18 +333,17 @@
         }
       } else if (CONFIG.whatsappNumber) {
         const text = encodeURIComponent(
-          '✨ OJILZTAG.COM | NEW PROJECT ENQUIRY ✨\n' +
-          '━━━━━━━━━━━━━━━━━━━━\n' +
-          '🚀 Let’s turn an idea into digital reality!\n\n' +
-          '👤 CUSTOMER DETAILS\n' +
-          'Name: ' + data.name + '\n' +
-          '📱 WhatsApp / Mobile: ' + data.phone + '\n' +
-          '✉️ Email: ' + (data.email || 'Not provided') + '\n\n' +
-          '🛠️ SERVICE REQUIRED\n' + data.service + '\n\n' +
-          '📝 PROJECT REQUIREMENTS\n' + data.message + '\n\n' +
-          '━━━━━━━━━━━━━━━━━━━━\n' +
-          '📩 Sent through digital.ojilztag.com\n' +
-          'OJILZTAG.COM – Your Digitalization & Technology Partner'
+          '*OJILZTAG.COM — NEW ENQUIRY*\\n' +
+          '━━━━━━━━━━━━━━━━━━\\n\\n' +
+          '*Customer Details*\\n' +
+          'Name: ' + data.name + '\\n' +
+          'Mobile: ' + data.phone + '\\n' +
+          'Email: ' + (data.email || 'Not provided') + '\\n\\n' +
+          '*Service Required*\\n' + data.service + '\\n\\n' +
+          '*Project Details*\\n' + data.message + '\\n\\n' +
+          '━━━━━━━━━━━━━━━━━━\\n' +
+          'Source: digital.ojilztag.com\\n' +
+          'OJILZTAG.COM | Digitalization & Technology Partner'
         );
         const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text;
         status.textContent = 'Opening WhatsApp with your complete enquiry. Please review and press Send.';
