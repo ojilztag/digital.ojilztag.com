@@ -152,13 +152,18 @@
 .project-card ul{padding-left:19px}
 .project-card li{margin:5px 0}
 .project-card .btn{align-self:flex-start;margin-top:auto}
-.leadership-card{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center}
+.leadership-card{display:grid;grid-template-columns:148px 1fr;gap:22px;align-items:center}
 .leader-mark{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#183e65,#0b243e);border:2px solid rgba(99,234,219,.38);color:var(--cyan);font-size:2.2rem;font-weight:900}
 .link-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
 .capability-note{border:1px solid rgba(99,234,219,.18);background:rgba(42,172,161,.06);border-radius:16px;padding:17px 19px;color:var(--muted);margin-top:22px}
 @media(max-width:700px){.project-grid,.leadership-card{grid-template-columns:1fr}.project-card .btn{align-self:stretch}.leader-mark{width:96px;height:96px}}
 
-  </style>
+  
+    .leader-photo-wrap{width:148px;height:148px;flex:0 0 148px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),#8b7bff);box-shadow:0 12px 34px rgba(0,0,0,.28);overflow:hidden}
+    .leader-photo{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 35%;border:3px solid rgba(255,255,255,.14)}
+    @media(max-width:640px){.leader-photo-wrap{width:112px;height:112px;flex-basis:112px}}
+
+</style>
 </head>
 <body>
   <!--
@@ -247,7 +252,7 @@
 <section class="section alt" id="leadership">
  <div class="wrap">
   <div class="section-head"><span class="eyebrow">Leadership behind the platform</span><h2>Know the founder behind OJILZTAG.COM.</h2><p>Clear leadership information helps visitors understand the person associated with the OJILZTAG.COM initiative and explore the founder's dedicated profile.</p></div>
-  <div class="leadership-card"><div class="leader-mark" aria-hidden="true">LJ</div><div><div class="leader-meta">Founder & Chief Executive Officer</div><h3 style="font-size:1.65rem;margin:7px 0">LIJO JOSEPH OJIL ZTAG</h3><p style="color:var(--muted);margin:0">The dedicated CEO profile describes Lijo Joseph OJIL ZTAG as Founder & Chief Executive Officer and dates the OJILZTAG.COM initiative's beginning to 2010. Visit the profile for the founder's biography, background and leadership journey.</p><div class="link-row"><a class="btn" href="https://ceo.ojilztag.com/" target="_blank" rel="noopener noreferrer">View Official CEO Profile ↗</a><a class="btn outline" href="#about">About OJILZTAG.COM</a></div></div></div>
+  <div class="leadership-card"><div class="leader-photo-wrap"><img class="leader-photo" src="https://raw.githubusercontent.com/ojilztag/ceo.ojilztag.com/main/me.jpg" alt="Lijo Joseph OJIL ZTAG, Founder and Chief Executive Officer of OJILZTAG.COM" loading="lazy" decoding="async" width="240" height="240"></div><div><div class="leader-meta">Founder & Chief Executive Officer</div><h3 style="font-size:1.65rem;margin:7px 0">LIJO JOSEPH OJIL ZTAG</h3><p style="color:var(--muted);margin:0">The dedicated CEO profile describes Lijo Joseph OJIL ZTAG as Founder & Chief Executive Officer and dates the OJILZTAG.COM initiative's beginning to 2010. Visit the profile for the founder's biography, background and leadership journey.</p><div class="link-row"><a class="btn" href="https://ceo.ojilztag.com/" target="_blank" rel="noopener noreferrer">View Official CEO Profile ↗</a><a class="btn outline" href="#about">About OJILZTAG.COM</a></div></div></div>
   <p class="notice">The CEO website is the dedicated source for the founder biography. This page links to it instead of duplicating personal details.</p>
  </div>
 </section>
