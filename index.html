@@ -135,6 +135,23 @@
     .scroll-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
     @media(max-width:600px){.scroll-toggle{right:12px;bottom:12px;width:38px;height:38px;font-size:1.2rem}}
 
+
+/* OJILZTAG public project showcase */
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.project-card,.leadership-card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(17,42,69,.96),rgba(8,24,43,.98));padding:24px;box-shadow:0 12px 34px rgba(0,0,0,.12)}
+.project-card{display:flex;flex-direction:column;gap:12px}
+.project-label,.leader-meta{color:var(--cyan);font-weight:850;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.project-card h3{margin:0;font-size:1.3rem}
+.project-card p,.project-card ul{margin:0;color:var(--muted)}
+.project-card ul{padding-left:19px}
+.project-card li{margin:5px 0}
+.project-card .btn{align-self:flex-start;margin-top:auto}
+.leadership-card{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center}
+.leader-mark{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#183e65,#0b243e);border:2px solid rgba(99,234,219,.38);color:var(--cyan);font-size:2.2rem;font-weight:900}
+.link-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.capability-note{border:1px solid rgba(99,234,219,.18);background:rgba(42,172,161,.06);border-radius:16px;padding:17px 19px;color:var(--muted);margin-top:22px}
+@media(max-width:700px){.project-grid,.leadership-card{grid-template-columns:1fr}.project-card .btn{align-self:stretch}.leader-mark{width:96px;height:96px}}
+
   </style>
 </head>
 <body>
@@ -153,7 +170,7 @@
       <a class="brand" href="#home" aria-label="OJILZTAG home">OJILZTAG<span>.COM</span></a>
       <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
       <nav class="navlinks" id="navLinks">
-        <a href="#home">Home</a><a href="#services">Services</a><a href="#events">Event Solutions</a><a href="#process">How It Works</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#capabilities">Capabilities</a><a href="#projects">Projects</a><a href="#leadership">Founder & CEO</a><a href="#events">Event Solutions</a><a href="#process">Process</a><a href="#contact">Contact</a>
       </nav>
       <a class="btn navcta" href="#contact">Start a Project ↗</a>
     </div>
@@ -195,6 +212,39 @@
       </div>
     </section>
 
+
+<section class="section alt" id="capabilities">
+ <div class="wrap">
+  <div class="section-head"><span class="eyebrow">What we can build</span><h2>Practical digital capabilities, demonstrated through real project concepts.</h2><p>Explore digital experiences OJILZTAG.COM can plan and develop for businesses, institutions, organizers and creators. Each project is scoped to its real requirements.</p></div>
+  <div class="grid">
+   <article class="card"><div class="icon">🌐</div><h3>Websites & Web Applications</h3><p>Responsive business websites, landing pages, custom portals, dashboards and interactive browser-based experiences.</p></article>
+   <article class="card"><div class="icon">🎟️</div><h3>Event & Competition Platforms</h3><p>Event information, participant registration, event-specific workflows, announcements and organizer support concepts.</p></article>
+   <article class="card"><div class="icon">🏫</div><h3>Education & Student Systems</h3><p>Student profiles, ID-based search, fee workflows, receipts and administrative systems planned around an institution's process.</p></article>
+   <article class="card"><div class="icon">🏢</div><h3>Business Digitalization</h3><p>Customer enquiries, service directories, business workflows, data organization and connected tools for daily operations.</p></article>
+   <article class="card"><div class="icon">🔗</div><h3>Automation & Integrations</h3><p>Forms, spreadsheets, compatible APIs, notifications and cloud-connected workflows with attention to permissions and security.</p></article>
+   <article class="card"><div class="icon">🎨</div><h3>Creative & Brand Experiences</h3><p>Brand identity, digital creatives, promotional pages and multimedia concepts that support a consistent online presence.</p></article>
+  </div>
+  <div class="capability-note"><strong style="color:#fff">Showcase transparency:</strong> Capabilities describe project types that can be scoped and proposed. A feature is represented as live only when the linked demonstration currently supports it.</div>
+ </div>
+</section>
+<section class="section" id="projects">
+ <div class="wrap">
+  <div class="section-head"><span class="eyebrow">Live projects & demonstrations</span><h2>See the concepts in context.</h2><p>Explore separate OJILZTAG project websites to understand how different digital experiences can be organized. Each project keeps its own identity.</p></div>
+  <div class="project-grid">
+   <article class="project-card"><span class="project-label">Event service platform</span><div class="icon">🎪</div><h3>MY EVENT · MYEVENT HOSTING</h3><p>An OJILZTAG.COM event website and digital management service concept for organizers who need event pages, online registration, participant information workflows, communications and reporting.</p><ul><li>Event website and information publishing</li><li>Registration and enquiry workflows</li><li>Participant and event data management</li><li>Workflow automation and reporting options</li></ul><a class="btn" href="https://myevent.ojilztag.com/" target="_blank" rel="noopener noreferrer">Explore MY EVENT ↗</a></article>
+   <article class="project-card"><span class="project-label">Competition website</span><div class="icon">🎄</div><h3>CAROLIA 2026</h3><p>An online Christmas Carol Singing Competition presented by Mathruvedhi Teams. It is a separate event website and a practical example of an online competition experience.</p><ul><li>Competition information and rules</li><li>Participant registration workflow</li><li>Registration ID and status-check features</li><li>Event notices and organizer information</li></ul><a class="btn" href="https://carolia.ojilztag.com/" target="_blank" rel="noopener noreferrer">Visit CAROLIA 2026 ↗</a></article>
+  </div>
+  <div class="capability-note"><strong style="color:#fff">Project transparency:</strong> MY EVENT is presented as the event service platform. CAROLIA 2026 is presented as a specific competition website. Custom modules and service availability depend on the agreed scope.</div>
+ </div>
+</section>
+<section class="section alt" id="leadership">
+ <div class="wrap">
+  <div class="section-head"><span class="eyebrow">Leadership behind the platform</span><h2>Know the founder behind OJILZTAG.COM.</h2><p>Clear leadership information helps visitors understand the person associated with the OJILZTAG.COM initiative and explore the founder's dedicated profile.</p></div>
+  <div class="leadership-card"><div class="leader-mark" aria-hidden="true">LJ</div><div><div class="leader-meta">Founder & Chief Executive Officer</div><h3 style="font-size:1.65rem;margin:7px 0">LIJO JOSEPH OJIL ZTAG</h3><p style="color:var(--muted);margin:0">The dedicated CEO profile describes Lijo Joseph OJIL ZTAG as Founder & Chief Executive Officer and dates the OJILZTAG.COM initiative's beginning to 2010. Visit the profile for the founder's biography, background and leadership journey.</p><div class="link-row"><a class="btn" href="https://ceo.ojilztag.com/" target="_blank" rel="noopener noreferrer">View Official CEO Profile ↗</a><a class="btn outline" href="#about">About OJILZTAG.COM</a></div></div></div>
+  <p class="notice">The CEO website is the dedicated source for the founder biography. This page links to it instead of duplicating personal details.</p>
+ </div>
+</section>
+
     <section class="section alt" id="events">
       <div class="wrap split">
         <div>
@@ -226,7 +276,7 @@
 
     <section class="section" id="about">
       <div class="wrap split">
-        <div><span class="eyebrow">About OJILZTAG.COM</span><div class="section-head"><h2>A smarter approach to your digital ambitions.</h2><p>OJILZTAG.COM brings together digital services, technology concepts, online platforms, event solutions and creative support under one brand.</p></div><p style="color:var(--muted)">Whether you are starting a new business, promoting a service, organizing an event or exploring a custom digital project, we help you identify a suitable next step.</p></div>
+        <div><span class="eyebrow">About OJILZTAG.COM</span><div class="section-head"><h2>A smarter approach to your digital ambitions.</h2><p>OJILZTAG.COM brings together digital services, technology concepts, online platforms, event solutions and creative support under one brand. This website is the public digital solutions and demonstration hub: it explains capabilities, links to separate project platforms and gives prospective clients a clear route to discuss their requirements.</p></div><p style="color:var(--muted)">Whether you are starting a new business, promoting a service, organizing an event or exploring a custom digital project, we help you identify a suitable next step.</p></div>
         <div class="featurebox"><div class="eyebrow">Our approach</div><h3>Practical. Connected. Purpose-driven.</h3><ul class="checklist"><li>Understand the real requirement first</li><li>Recommend a suitable solution and scope</li><li>Prioritize usability and mobile experience</li><li>Consider security and maintainability</li><li>Communicate clearly throughout the project</li></ul></div>
       </div>
     </section>
@@ -272,7 +322,7 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footerin"><div><strong>OJILZTAG.COM</strong><br> Your Complete Digitalization &amp; Technology Partner.<br><small>© <span id="year"></span> OJILZTAG.COM. All rights reserved.</small></div><div class="footerlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="#" onclick="alert('Add your Privacy Policy page URL before publishing.');return false;">Privacy Policy</a><a href="#" onclick="alert('Add your Terms & Conditions page URL before publishing.');return false;">Terms</a></div></div></footer>
+  <footer class="footer"><div class="wrap footerin"><div><strong>OJILZTAG.COM</strong><br> Your Complete Digitalization &amp; Technology Partner.<br><small>© <span id="year"></span> OJILZTAG.COM. All rights reserved.</small></div><div class="footerlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#leadership">Founder & CEO</a><a href="https://myevent.ojilztag.com/" target="_blank" rel="noopener noreferrer">MY EVENT</a><a href="https://carolia.ojilztag.com/" target="_blank" rel="noopener noreferrer">CAROLIA 2026</a><a href="https://ceo.ojilztag.com/" target="_blank" rel="noopener noreferrer">CEO Profile</a><a href="#contact">Contact</a><a href="#" onclick="alert('Add your Privacy Policy page URL before publishing.');return false;">Privacy Policy</a><a href="#" onclick="alert('Add your Terms & Conditions page URL before publishing.');return false;">Terms</a></div></div></footer>
   <button class="scroll-toggle" id="scrollToggle" type="button" aria-label="Scroll to bottom" title="Scroll to bottom">↓</button>
 
   <script>
