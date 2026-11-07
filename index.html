@@ -424,22 +424,22 @@
       const status = document.getElementById('formStatus');
       const subject = encodeURIComponent('OJILZTAG.COM Enquiry - ' + data.service);
       const body = encodeURIComponent(
-        'Name: ' + data.name + '\\nPhone: ' + data.phone + '\\nEmail: ' + (data.email || 'Not provided') +
-        '\\nService: ' + data.service + '\\n\\nProject details:\\n' + data.message
+        'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + (data.email || 'Not provided') +
+        '\nService: ' + data.service + '\n\nProject details:\n' + data.message
       );
       const whatsappText = encodeURIComponent(
-        '*OJILZTAG.COM — NEW ENQUIRY*\\n' +
-        '━━━━━━━━━━━━━━━━━━\\n\\n' +
-        '*Customer Details*\\n' +
-        'Name: ' + data.name + '\\n' +
-        'Mobile: ' + data.phone + '\\n' +
-        'Email: ' + (data.email || 'Not provided') + '\\n\\n' +
-        '*Service Required*\\n' +
-        data.service + '\\n\\n' +
-        '*Project Details*\\n' +
-        data.message + '\\n\\n' +
-        '━━━━━━━━━━━━━━━━━━\\n' +
-        'Source: digital.ojilztag.com\\n' +
+        '*OJILZTAG.COM — NEW ENQUIRY*\n' +
+        '━━━━━━━━━━━━━━━━━━\n\n' +
+        '*Customer Details*\n' +
+        'Name: ' + data.name + '\n' +
+        'Mobile: ' + data.phone + '\n' +
+        'Email: ' + (data.email || 'Not provided') + '\n\n' +
+        '*Service Required*\n' +
+        data.service + '\n\n' +
+        '*Project Details*\n' +
+        data.message + '\n\n' +
+        '━━━━━━━━━━━━━━━━━━\n' +
+        'Source: digital.ojilztag.com\n' +
         'OJILZTAG.COM | Digitalization & Technology Partner'
       );
       const whatsappUrl = CONFIG.whatsappNumber
