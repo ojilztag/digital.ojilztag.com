@@ -159,6 +159,7 @@
 @media(max-width:700px){.project-grid,.leadership-card{grid-template-columns:1fr}.project-card .btn{align-self:stretch}.leader-mark{width:96px;height:96px}}
 
   
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     .leader-photo-wrap{width:148px;height:148px;flex:0 0 148px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),#8b7bff);box-shadow:0 12px 34px rgba(0,0,0,.28);overflow:hidden}
     .leader-photo{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 35%;border:3px solid rgba(255,255,255,.14)}
     .leader-name{font-size:clamp(1rem,2.2vw,1.65rem);line-height:1.2;letter-spacing:-.035em;white-space:nowrap;margin:7px 0}
@@ -266,7 +267,7 @@
    <article class="card"><div class="icon">🌐</div><h3>Business Websites</h3><p>Responsive business websites, landing pages and mobile-friendly online business presence.</p></article>
    <article class="card"><div class="icon">🎟️</div><h3>Event & Competition Platforms</h3><p>Event information, participant registration, event-specific workflows, announcements and organizer support concepts.</p></article>
    <article class="card"><div class="icon">🏫</div><h3>Education & Student Systems</h3><p>Student profiles, ID-based search, fee workflows, receipts and administrative systems planned around an institution's process.</p></article>
-   <article class="card"><div class="icon">🏢</div><h3>Business Digitalization</h3><p>Customer enquiries, service directories, business workflows, data organization and connected tools for daily operations.</p></article>
+   <article class="card"><div class="icon">🏢</div><h3>Business Operations & Digital Tools</h3><p>Customer enquiries, service directories, business workflows, data organization and connected tools for daily operations.</p></article>
    <article class="card"><div class="icon">🔗</div><h3>Automation & Integrations</h3><p>Forms, spreadsheets, compatible APIs, notifications and cloud-connected workflows with attention to permissions and security.</p></article>
    <article class="card"><div class="icon">🎨</div><h3>Creative & Brand Experiences</h3><p>Brand identity, digital creatives, promotional pages and multimedia concepts that support a consistent online presence.</p></article>
   </div>
@@ -416,13 +417,37 @@
     document.getElementById('enquiryForm').addEventListener('submit', async function(event) {
       event.preventDefault();
       const form = event.currentTarget;
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton.disabled) return;
+
       const data = Object.fromEntries(new FormData(form).entries());
       const status = document.getElementById('formStatus');
       const subject = encodeURIComponent('OJILZTAG.COM Enquiry - ' + data.service);
       const body = encodeURIComponent(
-        'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + (data.email || 'Not provided') +
-        '\nService: ' + data.service + '\n\nProject details:\n' + data.message
+        'Name: ' + data.name + '\\nPhone: ' + data.phone + '\\nEmail: ' + (data.email || 'Not provided') +
+        '\\nService: ' + data.service + '\\n\\nProject details:\\n' + data.message
       );
+      const whatsappText = encodeURIComponent(
+        '*OJILZTAG.COM — NEW ENQUIRY*\\n' +
+        '━━━━━━━━━━━━━━━━━━\\n\\n' +
+        '*Customer Details*\\n' +
+        'Name: ' + data.name + '\\n' +
+        'Mobile: ' + data.phone + '\\n' +
+        'Email: ' + (data.email || 'Not provided') + '\\n\\n' +
+        '*Service Required*\\n' +
+        data.service + '\\n\\n' +
+        '*Project Details*\\n' +
+        data.message + '\\n\\n' +
+        '━━━━━━━━━━━━━━━━━━\\n' +
+        'Source: digital.ojilztag.com\\n' +
+        'OJILZTAG.COM | Digitalization & Technology Partner'
+      );
+      const whatsappUrl = CONFIG.whatsappNumber
+        ? 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + whatsappText
+        : '';
+
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-disabled', 'true');
       status.textContent = 'Preparing your enquiry…';
 
       if (CONFIG.formEndpoint) {
@@ -435,34 +460,31 @@
           if (!response.ok) throw new Error('Submission failed');
           status.textContent = 'Thank you! Your enquiry has been submitted.';
           form.reset();
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-disabled');
         } catch (error) {
-          status.textContent = 'Could not submit automatically. Please use WhatsApp or email after configuring the contact details.';
+          if (whatsappUrl) {
+            status.textContent = 'Automatic submission failed. Opening WhatsApp so you can send your enquiry manually.';
+            window.location.assign(whatsappUrl);
+          } else if (CONFIG.contactEmail) {
+            status.textContent = 'Automatic submission failed. Opening your email app as a fallback.';
+            window.location.href = 'mailto:' + CONFIG.contactEmail + '?subject=' + subject + '&body=' + body;
+          } else {
+            status.textContent = 'Could not submit automatically. Please contact OJILZTAG.COM directly.';
+            submitButton.disabled = false;
+            submitButton.removeAttribute('aria-disabled');
+          }
         }
-      } else if (CONFIG.whatsappNumber) {
-        const text = encodeURIComponent(
-          '*OJILZTAG.COM — NEW ENQUIRY*\n' +
-          '━━━━━━━━━━━━━━━━━━\n\n' +
-          '*Customer Details*\n' +
-          'Name: ' + data.name + '\n' +
-          'Mobile: ' + data.phone + '\n' +
-          'Email: ' + (data.email || 'Not provided') + '\n\n' +
-          '*Service Required*\n' +
-          data.service + '\n\n' +
-          '*Project Details*\n' +
-          data.message + '\n\n' +
-          '━━━━━━━━━━━━━━━━━━\n' +
-          'Source: digital.ojilztag.com\n' +
-          'OJILZTAG.COM | Digitalization & Technology Partner'
-        );
-        const whatsappUrl = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + text;
-        status.textContent = 'Opening WhatsApp with your complete enquiry. Please review and press Send.';
-        // Navigate in the same tab to avoid mobile-browser popup blocking.
+      } else if (whatsappUrl) {
+        status.textContent = 'Opening WhatsApp with your complete enquiry. Please review it and press Send.';
         window.location.assign(whatsappUrl);
       } else if (CONFIG.contactEmail) {
         window.location.href = 'mailto:' + CONFIG.contactEmail + '?subject=' + subject + '&body=' + body;
         status.textContent = 'Your email app is opening. Send the prepared enquiry to complete the request.';
       } else {
-        status.textContent = 'Website demo mode: add a WhatsApp number, contact email or form endpoint in CONFIG before publishing to receive enquiries.';
+        status.textContent = 'Enquiry delivery is not configured yet. Please contact OJILZTAG.COM directly.';
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-disabled');
       }
     });
   </script>
