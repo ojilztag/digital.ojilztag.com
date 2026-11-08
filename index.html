@@ -266,13 +266,37 @@
       .formbox form input,.formbox form select,.formbox form textarea{padding:14px 15px;border-radius:12px}
       .formbox form textarea{min-height:145px}
       .formbox form button{padding:15px}
-      .brand-promo-card{position:relative;overflow:hidden;margin-top:24px;padding:23px 25px;border:1px solid rgba(99,234,219,.2);border-radius:18px;background:radial-gradient(circle at 92% 12%,rgba(99,234,219,.13),transparent 34%),linear-gradient(110deg,rgba(17,52,78,.92),rgba(10,30,51,.95))}
-      .brand-promo-card:after{content:"";position:absolute;width:155px;height:155px;right:-76px;bottom:-100px;border:1px solid rgba(99,234,219,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(99,234,219,.025),0 0 0 36px rgba(99,234,219,.02);pointer-events:none}
-      .promo-overline{color:var(--cyan);font-size:.67rem;font-weight:900;letter-spacing:.16em}
-      .brand-promo-card h3{position:relative;z-index:1;margin:8px 0 7px;color:#f5f9ff;font-size:1.25rem;line-height:1.25}
-      .brand-promo-card p{position:relative;z-index:1;margin:0;color:var(--muted);font-size:.86rem;line-height:1.65;max-width:660px}
-      .promo-steps{position:relative;z-index:1;display:flex;align-items:center;gap:12px;margin-top:17px;color:#dff8ff;font-size:.7rem;font-weight:900;letter-spacing:.12em}
-      .promo-steps i{font-style:normal;color:var(--cyan);font-size:.95rem}
+      .brand-promo-card{display:none}
+      .brand-promo-card{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(190px,.65fr);grid-template-rows:1fr auto;gap:15px 12px;margin-top:24px;min-height:255px;padding:25px 27px 17px;border:1px solid rgba(117,158,255,.42);border-radius:22px;background:radial-gradient(ellipse at 12% 0%,rgba(70,108,255,.27),transparent 42%),radial-gradient(ellipse at 82% 80%,rgba(0,224,211,.18),transparent 38%),linear-gradient(122deg,#111b43 0%,#18265b 48%,#102e49 100%);box-shadow:0 18px 42px rgba(3,10,30,.3),inset 0 1px 0 rgba(255,255,255,.12)}
+      .brand-promo-card:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:27px 27px;mask-image:linear-gradient(110deg,#000,transparent 78%);pointer-events:none}
+      .promo-card-glow{position:absolute;z-index:-1;width:260px;height:260px;right:5%;top:-175px;border-radius:50%;background:#7b61ff;filter:blur(75px);opacity:.28;pointer-events:none}
+      .promo-card-main{position:relative;z-index:1;align-self:center}
+      .promo-card-topline{display:flex;align-items:center;gap:8px;color:#9cecff;font-size:.61rem;font-weight:950;letter-spacing:.14em}
+      .promo-spark{display:grid;place-items:center;width:23px;height:23px;border-radius:8px;color:#171b4c;background:linear-gradient(135deg,#ffe18a,#ff9d78);font-size:.9rem}
+      .promo-topline-rule{height:1px;flex:1;background:linear-gradient(90deg,rgba(143,220,255,.5),transparent)}
+      .promo-edition{color:#a9b8e9;font-size:.52rem;letter-spacing:.1em;white-space:nowrap}
+      .brand-promo-card h3{margin:13px 0 9px;color:#fff;font-size:clamp(1.45rem,2vw,2rem);font-weight:950;line-height:1.08;letter-spacing:-.035em}
+      .brand-promo-card h3 span{background:linear-gradient(95deg,#8deaff 0%,#a9a0ff 54%,#ffc18d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+      .brand-promo-card p{max-width:480px;margin:0;color:#d1dcf7;font-size:.79rem;line-height:1.65}
+      .promo-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+      .promo-tags span{padding:6px 9px;border:1px solid rgba(167,213,255,.22);border-radius:999px;background:rgba(255,255,255,.07);color:#e5f5ff;font-size:.57rem;font-weight:850;letter-spacing:.08em}
+      .promo-card-visual{position:relative;display:grid;place-items:center;min-height:178px}
+      .promo-orbit{position:absolute;aspect-ratio:1;border:1px solid rgba(132,226,255,.32);border-radius:50%;transform:rotate(-25deg)}
+      .promo-orbit-one{width:150px;height:150px}
+      .promo-orbit-two{width:116px;height:116px;border-color:rgba(255,190,147,.42);transform:rotate(38deg)}
+      .promo-core{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:86px;height:86px;border:1px solid rgba(255,255,255,.55);border-radius:26px;background:linear-gradient(145deg,rgba(119,225,255,.28),rgba(120,95,255,.4));box-shadow:0 0 34px rgba(93,190,255,.25),inset 0 1px 15px rgba(255,255,255,.16);transform:rotate(-8deg)}
+      .promo-core b,.promo-core span{color:#fff;font-size:1.45rem;font-weight:950;letter-spacing:-.08em}
+      .promo-core small{margin-top:2px;color:#d8f7ff;font-size:.39rem;font-weight:850;line-height:1.25;text-align:center;letter-spacing:.1em}
+      .promo-float{position:absolute;display:flex;align-items:center;gap:5px;padding:6px 8px;border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(8,18,49,.82);box-shadow:0 7px 18px rgba(0,0,0,.2);color:#fff;font-size:.53rem;font-weight:900;letter-spacing:.08em}
+      .promo-float b{color:#8feaff;font-size:.58rem}
+      .promo-float-one{top:12%;left:2%}
+      .promo-float-two{top:46%;right:-2%}
+      .promo-float-three{bottom:8%;left:12%}
+      .promo-card-footer{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid rgba(191,219,255,.2);color:#aebfe9;font-size:.55rem;font-weight:900;letter-spacing:.14em}
+      .promo-footer-mark{color:#fff;font-size:.65rem;letter-spacing:.08em}
+      .promo-footer-mark span{color:#7ee9e0}
+      @media(min-width:1100px){.brand-promo-card{display:grid}}
+      @media(min-width:1100px) and (max-width:1240px){.brand-promo-card{grid-template-columns:minmax(0,1.2fr) minmax(160px,.8fr);padding:21px}.promo-card-visual{transform:scale(.9)}.promo-edition{display:none}}
       .footerin{align-items:center}
       .footerlinks{justify-content:flex-end;gap:18px}
     }
@@ -471,10 +495,21 @@
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
             </form>
             <div class="brand-promo-card">
-              <span class="promo-overline">THE OJILZTAG APPROACH</span>
-              <h3>Your idea deserves a smarter digital future.</h3>
-              <p>Start with what matters today. We shape practical digital solutions around your goals, build with purpose and help you move forward—one meaningful step at a time.</p>
-              <div class="promo-steps"><span>IDEA</span><i>→</i><span>CREATE</span><i>→</i><span>GROW</span></div>
+              <div class="promo-card-glow" aria-hidden="true"></div>
+              <div class="promo-card-main">
+                <div class="promo-card-topline"><span class="promo-spark">✦</span><span>THE OJILZTAG DIFFERENCE</span><span class="promo-topline-rule"></span><span class="promo-edition">BUILT AROUND YOU</span></div>
+                <h3>Big ideas.<br><span>Smarter digital moves.</span></h3>
+                <p>From your first online presence to connected business systems and creative media, bring everything together with one practical digital partner.</p>
+                <div class="promo-tags"><span>✦ DIGITAL</span><span>⌘ AUTOMATION</span><span>◈ CREATIVE</span></div>
+              </div>
+              <div class="promo-card-visual" aria-label="Idea to create to grow">
+                <div class="promo-orbit promo-orbit-one"></div><div class="promo-orbit promo-orbit-two"></div>
+                <div class="promo-core"><span>OJ</span><small>IDEAS IN<br>FORWARD MOTION</small></div>
+                <div class="promo-float promo-float-one"><b>01</b><span>IDEA</span></div>
+                <div class="promo-float promo-float-two"><b>02</b><span>CREATE</span></div>
+                <div class="promo-float promo-float-three"><b>03</b><span>GROW</span></div>
+              </div>
+              <div class="promo-card-footer"><span>START SMALL. THINK BIG. BUILD SMART.</span><span class="promo-footer-mark">OJILZTAG<span>.COM</span></span></div>
             </div>
           </div>
         </div>
