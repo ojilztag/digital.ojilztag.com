@@ -9,6 +9,21 @@
 <style>
 :root{color-scheme:dark;--bg:#071426;--panel:#102641;--line:rgba(180,211,255,.16);--text:#eef5ff;--muted:#b4c4d9;--accent:#63eadb}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#050d1b,#0b1c33);color:var(--text);font:16px/1.75 system-ui,-apple-system,Segoe UI,Arial,sans-serif}.wrap{width:min(850px,calc(100% - 32px));margin:48px auto}.brand{font-weight:900;letter-spacing:.04em;color:var(--accent);text-decoration:none}.panel{margin-top:22px;padding:clamp(22px,5vw,42px);border:1px solid var(--line);border-radius:22px;background:var(--panel)}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1}h2{margin-top:30px;font-size:1.25rem}p,li{color:var(--muted)}a{color:var(--accent)}.date{font-size:.9rem;color:var(--muted)}.back{display:inline-block;margin-top:25px;padding:10px 16px;border:1px solid var(--line);border-radius:99px;text-decoration:none}
+
+
+/* GLOBAL READABILITY + CONTRAST AUDIT — Nov 2026 */
+:root{color-scheme:dark;--bg:#050d1b;--panel:#102741;--line:rgba(190,213,242,.24);--text:#f7faff;--muted:#c5d3e5;--accent:#70f0df}
+body{color:#f7faff}
+h1,h2,h3,h4{color:#ffffff}
+p,li,.date{color:#c5d3e5}
+a{color:#8ec8ff}
+a:hover,a:focus-visible{color:#ffffff}
+.back{color:#f7faff;border-color:#75baff;background:#173653}
+.back:hover,.back:focus-visible{background:#24547d}
+:focus-visible{outline:2px solid #70f0df;outline-offset:3px}
+::selection{background:#1b6592;color:#fff}
+
+/* END GLOBAL READABILITY AUDIT */
 </style>
 </head>
 <body><main class="wrap"><a class="brand" href="/">OJILZTAG.COM</a><article class="panel">
