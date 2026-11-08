@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+<title id="t">Hospital and clinic management system</title><desc id="d">A clean illustration of a clinic building, medical cross, patient records and appointment dashboard.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eaf5ff"/><stop offset="1" stop-color="#e7fbf6"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3988d8"/><stop offset="1" stop-color="#2460a8"/></linearGradient></defs>
+<rect x="8" y="8" width="624" height="344" rx="28" fill="url(#bg)"/>
+<circle cx="500" cy="84" r="46" fill="#c9e9f7" opacity=".65"/><circle cx="110" cy="280" r="52" fill="#c9eee5" opacity=".8"/>
+<rect x="65" y="96" width="260" height="206" rx="18" fill="#fff" stroke="#b9d4e8" stroke-width="4"/>
+<path d="M125 96V66h140v30" fill="#d9ecfa" stroke="#b9d4e8" stroke-width="4"/>
+<rect x="170" y="120" width="52" height="52" rx="10" fill="url(#blue)"/><path d="M192 130h8v12h12v8h-12v12h-8v-12h-12v-8h12z" fill="#fff"/>
+<rect x="91" y="196" width="48" height="48" rx="8" fill="#e7f2fb"/><rect x="151" y="196" width="48" height="48" rx="8" fill="#e7f2fb"/><rect x="211" y="196" width="48" height="48" rx="8" fill="#e7f2fb"/>
+<path d="M115 196v48M175 196v48M235 196v48" stroke="#b9d4e8" stroke-width="3"/><rect x="165" y="258" width="60" height="44" rx="8" fill="#d9ecfa"/>
+<rect x="350" y="112" width="230" height="178" rx="18" fill="#fff" stroke="#b9d4e8" stroke-width="4"/>
+<rect x="350" y="112" width="230" height="38" rx="16" fill="url(#blue)"/><circle cx="373" cy="131" r="5" fill="#fff" opacity=".9"/><circle cx="390" cy="131" r="5" fill="#fff" opacity=".7"/><circle cx="407" cy="131" r="5" fill="#fff" opacity=".5"/>
+<rect x="372" y="170" width="84" height="96" rx="10" fill="#edf6fc"/><circle cx="414" cy="194" r="15" fill="#82b9e6"/><path d="M389 244c5-22 45-22 50 0" fill="#82b9e6"/><rect x="472" y="174" width="84" height="10" rx="5" fill="#b6d1e5"/><rect x="472" y="196" width="66" height="8" rx="4" fill="#d1e2ef"/><rect x="472" y="216" width="76" height="8" rx="4" fill="#d1e2ef"/><rect x="472" y="242" width="64" height="20" rx="7" fill="#d9f3eb"/>
+<path d="M300 292h55" stroke="#57b9a8" stroke-width="8" stroke-linecap="round"/><circle cx="326" cy="292" r="13" fill="#57b9a8"/>
+</svg>
