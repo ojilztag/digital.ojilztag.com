@@ -1095,7 +1095,95 @@
       .contact-info,.formbox{padding:22px}
     }
 
-  </style>
+  
+
+    /* FINAL RESPONSIVE FINISH — consistent navigation and compact spacing across phone, desktop-site and desktop */
+    html{scroll-padding-top:84px}
+    .nav{z-index:100}
+    .navin{position:relative!important;min-height:76px!important;gap:clamp(10px,2vw,22px)!important}
+    .menu{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px;min-height:44px;padding:10px 16px!important;border:1px solid #a9bfd4!important;border-radius:12px!important;background:#fff!important;color:#183653!important;font-size:.92rem;font-weight:800!important;line-height:1.2;white-space:nowrap;cursor:pointer}
+    .menu:hover,.menu:focus-visible{background:#edf6ff!important;border-color:#6c9fc8!important;outline:2px solid transparent;box-shadow:0 0 0 3px rgba(68,143,198,.16)}
+    .navlinks,.navlinks.open{
+      display:none!important;position:absolute!important;top:calc(100% + 8px)!important;left:auto!important;right:0!important;bottom:auto!important;
+      transform:none!important;width:min(320px,calc(100vw - 30px))!important;min-width:0!important;max-width:calc(100vw - 30px)!important;
+      max-height:min(70vh,560px)!important;overflow-y:auto!important;overscroll-behavior:contain;
+      flex-direction:column!important;align-items:stretch!important;gap:3px!important;padding:10px!important;
+      border:1px solid #d7e3ef!important;border-radius:15px!important;background:#fff!important;
+      box-shadow:0 16px 38px rgba(17,47,79,.2)!important;color:#183653!important;font-size:.94rem!important
+    }
+    .navlinks.open{display:flex!important}
+    .navlinks a{display:flex!important;align-items:center!important;min-height:43px;padding:10px 12px!important;border-radius:9px!important;color:#183653!important;font-weight:700!important;line-height:1.35}
+    .navlinks a:hover,.navlinks a:focus-visible{background:#edf6ff!important;color:#075fae!important;outline:none}
+    .navcta{display:inline-flex!important}
+    .section{padding-block:clamp(44px,5.2vw,68px)}
+    .section-head{margin-bottom:clamp(18px,2.6vw,28px)}
+    .section-head h2{margin:8px 0 10px;line-height:1.14;text-wrap:balance}
+    .section-head p{max-width:72ch;line-height:1.65}
+    .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(11px,1.5vw,17px);align-items:stretch}
+    .grid>.card,.grid>article.card{min-width:0;height:100%;display:flex;flex-direction:column;align-items:stretch;gap:0}
+    .card h3{line-height:1.3;text-wrap:pretty}
+    .card p{line-height:1.62;overflow-wrap:anywhere}
+    .card .taglist{margin-top:auto;padding-top:13px}
+    .card .starting-price{margin-top:14px}
+    .featurebox{min-width:0}
+    img,svg,video{max-width:100%}
+    .hero-panel-visual,.card-visual,.creative-feature-visual,.system-visual{max-width:100%;height:auto}
+    .footerin{align-items:flex-start}
+    button,a,input,select,textarea{ -webkit-tap-highlight-color:transparent }
+    :focus-visible{outline:2px solid #4d9fe0;outline-offset:3px}
+    @media(min-width:1100px){
+      .navin{min-height:82px!important}
+      .navcta{margin-left:auto}
+      .hero{padding-block:clamp(62px,6vw,86px)}
+      .grid{gap:18px}
+    }
+    @media(min-width:901px) and (max-width:1099px){
+      .navin{min-height:76px!important}
+      .brand-name{font-size:clamp(1.35rem,2.2vw,1.62rem)}
+      .brand-caption{font-size:.48rem}
+      .navcta{padding:10px 13px!important;font-size:.78rem;white-space:nowrap}
+      .hero{min-height:0;padding:48px 0 46px}
+      .hero>.wrap{column-gap:22px}
+      .hero>.wrap>h1{font-size:clamp(2.45rem,4vw,3.25rem)}
+      .section{padding-block:52px}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    }
+    @media(max-width:900px){
+      .navin{min-height:68px!important}
+      .navcta{display:none!important}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-panel{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      html{scroll-padding-top:72px}
+      .wrap{width:calc(100% - 30px)}
+      .navin{min-height:64px!important}
+      .brand-name{font-size:1.08rem}
+      .brand-caption{font-size:.46rem;letter-spacing:.09em}
+      .menu{min-height:40px;padding:8px 12px!important;font-size:.84rem}
+      .section{padding-block:42px}
+      .section-head{margin-bottom:18px}
+      .section-head h2{font-size:clamp(1.55rem,7vw,1.95rem)}
+      .grid,.faq{grid-template-columns:minmax(0,1fr);gap:11px}
+      .card{padding:17px}
+      .hero{padding:48px 0 42px}
+      .hero-panel{margin-top:25px;padding:16px}
+      .cta{gap:15px}
+      .float{bottom:12px;right:12px}
+    }
+    @media(max-width:360px){
+      .wrap{width:calc(100% - 24px)}
+      .brand-name{font-size:1rem}
+      .brand-caption{font-size:.41rem}
+      .menu{padding:7px 10px!important}
+      .navlinks,.navlinks.open{width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    }
+    /* END FINAL RESPONSIVE FINISH */
+</style>
 </head>
 <body>
   <!--
@@ -1111,7 +1199,7 @@
   <header class="nav">
     <div class="wrap navin">
       <a class="brand" href="#home" aria-label="OJILZTAG.COM — Digital Solutions and Technology"><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><small class="brand-caption">CUSTOMIZED DIGITAL SIGNATURE</small></a>
-      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
+      <button class="menu" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-haspopup="true" aria-expanded="false">☰ Menu</button>
       <nav class="navlinks" id="navLinks" aria-label="Main navigation">
         <a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#capabilities">Framework</a><a href="#events">Events</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#leadership">Who's CEO</a><a href="#contact">Contact</a>
       </nav>
@@ -1412,13 +1500,22 @@
 
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      const opened = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(opened));
+    function setMenuOpen(open) {
+      navLinks.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    }
+    menuBtn.addEventListener('click', () => setMenuOpen(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuOpen(false)));
+    document.addEventListener('click', event => {
+      if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) setMenuOpen(false);
     });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
-    }));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMenuOpen(false);
+        menuBtn.focus();
+      }
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const scrollToggle = document.getElementById('scrollToggle');
