@@ -1336,7 +1336,19 @@
     .formbox form .service-required-field select{display:block;width:100%;text-align:left}
     .formbox form label{text-align:left}
     .formbox form input,.formbox form textarea,.formbox form select{text-align:left}
-</style>
+
+    /* Modern, searchable service selection */
+    .service-required-field{display:flex!important;flex-direction:column;align-items:stretch;gap:8px;font-weight:750;color:#eaf4ff!important}
+    .service-field-note,.service-selection-hint{display:block;color:#9fb4ce;font-size:.78rem;font-weight:450;line-height:1.55}
+    form input.service-search{margin-top:2px;min-height:48px;padding:12px 15px;border:1px solid rgba(104,169,255,.27);border-radius:13px;background:linear-gradient(120deg,#112a45,#08192c);color:#f4f8ff;box-shadow:inset 0 1px 0 rgba(255,255,255,.035);font-size:15px}
+    form input.service-search::placeholder{color:#8299b5;opacity:1}
+    form input.service-search:focus{border-color:#68a9ff;box-shadow:0 0 0 3px rgba(104,169,255,.12);outline:none}
+    form select#serviceSelect{margin-top:0;min-height:54px;padding:13px 15px;border:1px solid rgba(104,169,255,.34);border-radius:13px;background-color:#0b2038;color:#f4f8ff;font-weight:650;line-height:1.4;cursor:pointer}
+    form select#serviceSelect:focus{border-color:#63eadb;box-shadow:0 0 0 3px rgba(99,234,219,.11);outline:none}
+    form select#serviceSelect option,form select#serviceSelect optgroup{background:#0b2038;color:#f4f8ff}
+    @media(max-width:600px){.service-field-note,.service-selection-hint{font-size:.75rem}form input.service-search{min-height:50px}form select#serviceSelect{min-height:54px;font-size:16px}}
+
+  </style>
 </head>
 <body>
   <!--
@@ -1668,7 +1680,9 @@
               <label>Project Budget (Optional)<input name="budget" placeholder="e.g. ₹10,000–₹25,000 or To be discussed"></label>
               <label>Preferred Timeline (Optional)<input name="timeline" placeholder="e.g. Within 2 weeks / Flexible"></label>
               <label class="full service-required-field">Service Required *
-                <select name="service" required>
+                <span class="service-field-note">Choose the service that best matches your requirement. Search by service name or business function.</span>
+                <input class="service-search" type="search" id="serviceSearch" placeholder="⌕  Search services — e.g. school fees, appointments, website, billing..." autocomplete="off" aria-label="Search available services">
+                <select name="service" id="serviceSelect" required aria-describedby="serviceSelectionHint">
                   <option value="">Select the required service (mandatory)</option>
                   <optgroup label="Website, Digital Presence & Online Business">
                     <option>Website Development</option>
@@ -1768,6 +1782,7 @@
                     <option>Other — Custom Requirement (explain below)</option>
                   </optgroup>
                 </select>
+                <span class="service-selection-hint" id="serviceSelectionHint">Select one primary service here. Add connected modules and specific requirements in the details box below.</span>
               </label>
               <label class="full">Project Requirements &amp; Details *<textarea name="message" required placeholder="Explain the complete project concept and what you expect the system to do. Schools / colleges: student strength, classes, admissions, student profiles / ID, attendance, fee heads, concessions, partial / combined payments, receipts, exams, timetable, teachers, parents, transport, library, hostel, LMS and reports. Hospitals / clinics: departments, doctors, appointments, patient registration, reception, billing, lab, pharmacy stock and admin reports (do not share patient medical records here). Other businesses: customer journey, products / services, staff roles, branches, bookings, job cards, inventory, POS, invoices, payments, delivery, notifications and reports. Include current process, problems, user types, required modules, integrations, data migration, security / access needs, support and any special rules. Do not include passwords, OTPs or payment PINs."></textarea></label>
               <button class="btn full" type="submit">Send Enquiry ↗</button>
@@ -1848,8 +1863,34 @@
     document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', () => {
       const service = link.getAttribute('data-service');
       const select = document.querySelector('select[name="service"]');
-      if (select) select.value = service;
+      if (select) {
+        select.value = service;
+        select.dispatchEvent(new Event('change', {bubbles:true}));
+      }
     }));
+
+    // Search within all existing service groups; no service choices are removed.
+    const serviceSearch = document.getElementById('serviceSearch');
+    const serviceSelect = document.getElementById('serviceSelect');
+    if (serviceSearch && serviceSelect) {
+      const groups = Array.from(serviceSelect.querySelectorAll('optgroup'));
+      const options = Array.from(serviceSelect.querySelectorAll('option'));
+      serviceSearch.addEventListener('input', () => {
+        const query = serviceSearch.value.trim().toLocaleLowerCase();
+        options.forEach(option => {
+          option.hidden = !!query && !!option.value && !option.textContent.toLocaleLowerCase().includes(query);
+        });
+        groups.forEach(group => {
+          group.hidden = !!query && !Array.from(group.querySelectorAll('option')).some(option => !option.hidden);
+        });
+      });
+      serviceSelect.addEventListener('change', () => {
+        if (serviceSelect.value) {
+          serviceSearch.value = '';
+          serviceSearch.dispatchEvent(new Event('input'));
+        }
+      });
+    }
 
     document.getElementById('enquiryForm').addEventListener('submit', async function(event) {
       event.preventDefault();
