@@ -531,6 +531,62 @@
       .card-visual{height:145px}
       .project-visual{height:155px}
     }
+
+    /* VISUAL VARIETY + TYPOGRAPHY FINISH */
+    .hero h1{font-size:clamp(2.35rem,4.9vw,4.35rem);line-height:1.04;max-width:760px}
+    .section-head h2{font-size:clamp(1.65rem,2.8vw,2.45rem);line-height:1.13;max-width:800px}
+    .mini-grid{align-items:stretch;gap:11px}
+    .mini{min-width:0;min-height:128px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:10px 12px}
+    .mini img{display:block;width:100%;height:62px;object-fit:contain;object-position:center;margin:0 auto 4px;filter:drop-shadow(0 5px 10px rgba(49,179,255,.15))}
+    .mini b{font-size:.92rem;line-height:1.25}
+    .mini .panel-sub{font-size:.75rem;line-height:1.35}
+    .system-visual{display:block;width:100%;height:116px;object-fit:contain;object-position:left center;margin:0 0 12px;border-radius:13px;background:radial-gradient(ellipse at 24% 55%,rgba(67,142,255,.13),transparent 68%)}
+    .creative-feature{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);align-items:center;gap:22px;overflow:hidden}
+    .creative-feature-visual{display:block;width:100%;height:205px;object-fit:contain;object-position:center}
+    .creative-feature-copy h3{font-size:clamp(1.25rem,2.1vw,1.8rem);line-height:1.18;margin:9px 0}
+    .creative-feature-copy p{margin:0}
+    .section-head .eyebrow{line-height:1.4}
+    @media(min-width:1100px){
+      .hero h1{font-size:clamp(3.1rem,4.2vw,4.35rem)}
+      .section-head h2{font-size:clamp(2rem,2.5vw,2.55rem)}
+      .mini{min-height:142px;padding:12px}
+      .mini img{height:72px}
+      .system-visual{height:128px}
+      .creative-feature-visual{height:235px}
+    }
+    @media(max-width:900px){
+      .hero h1{font-size:clamp(2.3rem,5.4vw,3.6rem)}
+      .section-head h2{font-size:clamp(1.7rem,3.5vw,2.25rem)}
+      .system-visual{height:105px}
+      .creative-feature{grid-template-columns:minmax(170px,.75fr) minmax(0,1.25fr);gap:15px}
+      .creative-feature-visual{height:175px}
+    }
+    @media(max-width:600px){
+      .hero{padding-top:48px;padding-bottom:42px}
+      .hero h1{font-size:clamp(2.05rem,8.7vw,2.85rem);line-height:1.06;letter-spacing:-.045em;margin:15px 0}
+      .lead{font-size:.94rem;line-height:1.58}
+      .section{padding-block:46px}
+      .section-head{margin-bottom:18px}
+      .section-head h2{font-size:clamp(1.55rem,7vw,1.95rem);line-height:1.14;letter-spacing:-.035em;margin:8px 0}
+      .section-head p{font-size:.9rem;line-height:1.58}
+      .mini-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .mini{min-height:116px;padding:9px;border-radius:12px}
+      .mini img{height:53px}
+      .mini b{font-size:.83rem}
+      .mini .panel-sub{font-size:.69rem}
+      .system-visual{height:108px;margin-bottom:9px}
+      .creative-feature{grid-template-columns:1fr;gap:9px;padding:16px}
+      .creative-feature-visual{height:145px;max-width:340px;margin:0 auto}
+      .creative-feature-copy h3{font-size:1.28rem}
+    }
+    @media(max-width:380px){
+      .hero h1{font-size:2rem}
+      .section-head h2{font-size:1.48rem}
+      .mini{min-height:108px;padding:8px}
+      .mini img{height:47px}
+      .system-visual{height:94px}
+      .creative-feature-visual{height:128px}
+    }
     </style>
 </head>
 <body>
@@ -565,7 +621,12 @@
         <div class="trustline"><span>Solutions shaped around your requirements</span><span>Clear scope before implementation</span><span>Mobile-first digital experiences</span></div>
         <div class="hero-panel">
           <div><img class="hero-panel-visual" src="/assets/hero-digital.svg" alt="Digital solutions represented by a connected laptop and cloud technology" width="900" height="520" fetchpriority="high"><div class="eyebrow">One platform. Complete solutions.</div><div class="panel-title" style="font-size:1.55rem;margin:12px 0 8px">Think Smarter. Build Digital. Grow.</div><div class="panel-sub">An AI-inspired digital solutions experience combining smart workflows, connected technology and human-focused project support.</div></div>
-          <div class="mini-grid"><div class="mini">🌐 <b>Web &amp; Apps</b><span class="panel-sub">Digital presence</span></div><div class="mini">🎉 <b>Event Tech</b><span class="panel-sub">Online experiences</span></div><div class="mini">⚙️ <b>Automation</b><span class="panel-sub">Smarter workflows</span></div><div class="mini">📢 <b>Marketing</b><span class="panel-sub">Digital visibility</span></div></div>
+          <div class="mini-grid">
+            <div class="mini"><img src="/assets/visual-email.svg" alt="" width="320" height="220" loading="lazy" decoding="async"><b>Business Email</b><span class="panel-sub">Domain mailboxes</span></div>
+            <div class="mini"><img src="/assets/visual-crm.svg" alt="" width="320" height="220" loading="lazy" decoding="async"><b>CRM &amp; AI</b><span class="panel-sub">Connected systems</span></div>
+            <div class="mini"><img src="/assets/visual-payment.svg" alt="" width="320" height="220" loading="lazy" decoding="async"><b>Online Payments</b><span class="panel-sub">Secure checkout flows</span></div>
+            <div class="mini"><img src="/assets/visual-workflow.svg" alt="" width="320" height="220" loading="lazy" decoding="async"><b>Automation</b><span class="panel-sub">Smarter workflows</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -585,11 +646,11 @@
  <div class="wrap">
   <div class="section-head"><span class="eyebrow">Advanced digital systems & intelligent automation</span><h2>Connected systems. Smarter operations. Practical budgets.</h2><p>We design and develop custom digital solutions around the way each business or institution actually works. Start with a focused, affordable module and expand when your needs grow. Features, integrations, security requirements and delivery scope are agreed before development.</p></div>
   <div class="grid">
-   <article class="card"><div class="icon">✉️</div><h3>Custom Domain Email & Business Mailboxes</h3><p>Professional email accounts on your own domain, including mailbox creation, provider setup, DNS records, MX, SPF, DKIM and DMARC configuration, aliases, forwarding, device setup and migration assistance.</p><div class="taglist"><span class="tag">info@yourdomain.com</span><span class="tag">Hostinger Email</span><span class="tag">Domain Mail</span><span class="tag">Email Administration</span></div></article>
-   <article class="card"><div class="icon">📨</div><h3>Email Automation & Auto-Reply Systems</h3><p>Automated acknowledgement emails, enquiry replies, follow-up sequences, booking and order notifications, email templates, routing rules, reminders and workflow-triggered messages. Campaign and bulk-mail delivery are configured with consent, provider rules and deliverability safeguards.</p><div class="taglist"><span class="tag">Auto Replies</span><span class="tag">Email Workflows</span><span class="tag">Follow-ups</span><span class="tag">Notifications</span></div></article>
-   <article class="card"><div class="icon">🤖</div><h3>AI Integration & Intelligent Assistants</h3><p>Connect suitable AI services to websites and business workflows for customer support assistants, knowledge-based responses, enquiry classification, document and data assistance, internal productivity and task automation. Scope depends on data access, privacy, API availability and usage costs.</p><div class="taglist"><span class="tag">AI Assistants</span><span class="tag">AI Agents</span><span class="tag">API Integration</span><span class="tag">Smart Workflows</span></div></article>
-   <article class="card"><div class="icon">🔄</div><h3>CRM & Customer Relationship Systems</h3><p>Custom CRM concepts to organize leads, customers, contacts, enquiries, sales stages, tasks, appointments, follow-ups, service history and reports. Build a simple customer tracker first or develop a role-based system as requirements grow.</p><div class="taglist"><span class="tag">Lead Management</span><span class="tag">Customer Records</span><span class="tag">Sales Pipeline</span><span class="tag">Follow-up Tracking</span></div></article>
-   <article class="card"><div class="icon">💳</div><h3>Payment Gateway & Transaction Integration</h3><p>Integrate supported payment providers into websites, forms, stores and management systems. Plan payment links, checkout flows, order references, payment-status updates, receipts, reconciliation views and automated customer notifications. Gateway approval, transaction fees and provider requirements apply.</p><div class="taglist"><span class="tag">Payment Gateway</span><span class="tag">UPI & Online Payments</span><span class="tag">Order Status</span><span class="tag">Receipts</span></div></article>
+   <article class="card"><img class="system-visual" src="/assets/visual-email.svg" alt="Domain email and business mailbox illustration" width="320" height="220" loading="lazy" decoding="async"><h3>Custom Domain Email & Business Mailboxes</h3><p>Professional email accounts on your own domain, including mailbox creation, provider setup, DNS records, MX, SPF, DKIM and DMARC configuration, aliases, forwarding, device setup and migration assistance.</p><div class="taglist"><span class="tag">info@yourdomain.com</span><span class="tag">Hostinger Email</span><span class="tag">Domain Mail</span><span class="tag">Email Administration</span></div></article>
+   <article class="card"><img class="system-visual" src="/assets/visual-workflow.svg" alt="Automated email workflow illustration" width="320" height="220" loading="lazy" decoding="async"><h3>Email Automation & Auto-Reply Systems</h3><p>Automated acknowledgement emails, enquiry replies, follow-up sequences, booking and order notifications, email templates, routing rules, reminders and workflow-triggered messages. Campaign and bulk-mail delivery are configured with consent, provider rules and deliverability safeguards.</p><div class="taglist"><span class="tag">Auto Replies</span><span class="tag">Email Workflows</span><span class="tag">Follow-ups</span><span class="tag">Notifications</span></div></article>
+   <article class="card"><img class="system-visual" src="/assets/visual-automation.svg" alt="AI integration and intelligent assistant illustration" width="640" height="420" loading="lazy" decoding="async"><h3>AI Integration & Intelligent Assistants</h3><p>Connect suitable AI services to websites and business workflows for customer support assistants, knowledge-based responses, enquiry classification, document and data assistance, internal productivity and task automation. Scope depends on data access, privacy, API availability and usage costs.</p><div class="taglist"><span class="tag">AI Assistants</span><span class="tag">AI Agents</span><span class="tag">API Integration</span><span class="tag">Smart Workflows</span></div></article>
+   <article class="card"><img class="system-visual" src="/assets/visual-crm.svg" alt="Customer relationship management dashboard illustration" width="320" height="220" loading="lazy" decoding="async"><h3>CRM & Customer Relationship Systems</h3><p>Custom CRM concepts to organize leads, customers, contacts, enquiries, sales stages, tasks, appointments, follow-ups, service history and reports. Build a simple customer tracker first or develop a role-based system as requirements grow.</p><div class="taglist"><span class="tag">Lead Management</span><span class="tag">Customer Records</span><span class="tag">Sales Pipeline</span><span class="tag">Follow-up Tracking</span></div></article>
+   <article class="card"><img class="system-visual" src="/assets/visual-payment.svg" alt="Online payment gateway illustration" width="320" height="220" loading="lazy" decoding="async"><h3>Payment Gateway & Transaction Integration</h3><p>Integrate supported payment providers into websites, forms, stores and management systems. Plan payment links, checkout flows, order references, payment-status updates, receipts, reconciliation views and automated customer notifications. Gateway approval, transaction fees and provider requirements apply.</p><div class="taglist"><span class="tag">Payment Gateway</span><span class="tag">UPI & Online Payments</span><span class="tag">Order Status</span><span class="tag">Receipts</span></div></article>
    <article class="card"><div class="icon">🏥</div><h3>Hospital & Clinic Management Concepts</h3><p>Requirement-based systems for patient registration, appointment scheduling, department and doctor directories, visit records, billing workflows, payment status, receipts, reports and administrative coordination. Patient privacy, access controls, security and applicable compliance requirements are considered from the planning stage.</p><div class="taglist"><span class="tag">Patient Registration</span><span class="tag">Appointments</span><span class="tag">Billing</span><span class="tag">Administration</span></div></article>
    <article class="card"><div class="icon">🏫</div><h3>School & Education Management Systems</h3><p>Custom school and institution workflows for student profiles, admissions, ID-based search, attendance concepts, fee categories, payment tracking, individual or consolidated receipts, class records, notices and administrative reports.</p><div class="taglist"><span class="tag">Student Records</span><span class="tag">Fees & Receipts</span><span class="tag">Attendance</span><span class="tag">Administration</span></div></article>
    <article class="card"><div class="icon">🏢</div><h3>Business & Organization Management Systems</h3><p>Lightweight, purpose-built systems for staff, customers, inventory, service requests, bookings, tasks, documents, expenses, operations and reporting. Modules can be combined into a central dashboard with suitable user roles.</p><div class="taglist"><span class="tag">Operations</span><span class="tag">Staff & Tasks</span><span class="tag">Inventory</span><span class="tag">Reports</span></div></article>
@@ -606,8 +667,9 @@
    <h2>Ideas into visuals, sound and stories.</h2>
    <p>A dedicated department for creative design, media production and talent-led content. Projects can be developed with AI-assisted tools or through conventional human-led creative workflows. The creative direction, brief, deliverables and usage rights are agreed before production.</p>
   </div>
-  <div class="featurebox" style="margin-bottom:20px">
-   <h3>Two production approaches. One creative standard.</h3>
+  <div class="featurebox creative-feature" style="margin-bottom:20px">
+   <img class="creative-feature-visual" src="/assets/visual-creative.svg" alt="Creative studio with camera, video and visual production tools" width="640" height="420" loading="lazy" decoding="async">
+   <div class="creative-feature-copy"><span class="eyebrow">Creative studio</span><h3>Two production approaches. One creative standard.</h3><p class="panel-sub">From visual concepts to finished media, every project gets a clear creative direction.</p></div>
    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
     <div class="card"><div class="icon">✨</div><h3>AI-Assisted Creative Production</h3><p>Concept exploration, AI-assisted visual generation, creative variations, image enhancement, storyboard support, selected video-generation workflows, audio ideation and production assistance. Outputs are reviewed and refined by a human creative lead; tool availability, licensing and usage limits apply.</p></div>
     <div class="card"><div class="icon">✍️</div><h3>Traditional & Human-Led Production</h3><p>Original graphic design, manual photo editing, timeline-based video editing, conventional animation and motion design, music composition and arrangement, audio editing, writing, photography and publishing workflows without relying on generative AI for the creative output.</p></div>
