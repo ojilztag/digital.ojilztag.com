@@ -995,7 +995,107 @@
   .navlinks a:hover,.navlinks a:focus-visible{background:#edf6ff!important;color:#075fae!important}
   .navcta{margin-left:auto}
 }
-</style>
+
+    /* CHROME DESKTOP-SITE VIEW — compact desktop layout for 901–1099px viewports */
+    @media (min-width:901px) and (max-width:1099px){
+      .wrap{width:calc(100% - 52px);max-width:1120px}
+      .navin{
+        position:relative!important;
+        display:flex!important;
+        align-items:center!important;
+        justify-content:space-between!important;
+        gap:16px!important;
+        min-height:78px!important;
+      }
+      .brand-name{font-size:1.62rem}
+      .brand-caption{font-size:.49rem;letter-spacing:.11em}
+      .menu{
+        display:inline-flex!important;
+        align-items:center;
+        justify-content:center;
+        min-height:42px;
+        padding:9px 15px!important;
+        border:1px solid #9eb8d4!important;
+        border-radius:11px!important;
+        background:#fff!important;
+        color:#183653!important;
+        font-weight:850!important;
+        white-space:nowrap;
+      }
+      .navlinks{
+        display:none!important;
+        position:absolute!important;
+        top:calc(100% - 1px)!important;
+        left:50%!important;
+        right:auto!important;
+        transform:translateX(-50%);
+        z-index:120;
+        min-width:280px;
+        max-height:70vh;
+        overflow-y:auto;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        gap:3px!important;
+        padding:12px!important;
+        border:1px solid #dce6f2!important;
+        border-radius:15px!important;
+        background:#fff!important;
+        box-shadow:0 18px 42px rgba(17,47,79,.2)!important;
+        font-size:.92rem!important;
+      }
+      .navlinks.open{display:flex!important}
+      .navlinks a{
+        display:flex;
+        align-items:center;
+        min-height:42px;
+        padding:9px 12px!important;
+        border-radius:9px;
+        color:#183653!important;
+        font-weight:750;
+      }
+      .navlinks a:hover,.navlinks a:focus-visible{background:#edf6ff!important;color:#075fae!important}
+      .navcta{display:inline-flex!important;margin-left:auto;padding:10px 14px!important;font-size:.8rem;white-space:nowrap}
+      .hero{padding:66px 0 62px;min-height:560px;display:flex;align-items:center}
+      .hero>.wrap{
+        display:grid;
+        grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+        column-gap:28px;
+        row-gap:0;
+        align-items:center;
+      }
+      .hero>.wrap>.eyebrow{grid-column:1;grid-row:1;align-self:end;margin-bottom:7px}
+      .hero>.wrap>h1{grid-column:1;grid-row:2;font-size:clamp(2.8rem,4.2vw,3.65rem);line-height:1.04;margin:12px 0 17px}
+      .hero>.wrap>.lead{grid-column:1;grid-row:3;font-size:.98rem;line-height:1.65}
+      .hero-actions{grid-column:1;grid-row:4;gap:9px;margin:22px 0}
+      .hero-actions .btn{padding:11px 15px;font-size:.82rem}
+      .trustline{grid-column:1;grid-row:5;display:grid;gap:7px;font-size:.78rem}
+      .hero-panel{
+        grid-column:2;
+        grid-row:1 / span 5;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        margin:0;
+        padding:17px;
+        border-radius:22px;
+      }
+      .hero-panel-visual{max-height:165px}
+      .panel-title{font-size:1.28rem!important}
+      .panel-sub{font-size:.78rem;line-height:1.5}
+      .mini-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+      .mini{min-height:112px;padding:9px}
+      .mini img{height:48px}
+      .mini b{font-size:.82rem}
+      .mini .panel-sub{font-size:.69rem}
+      .section{padding-block:66px}
+      .section-head h2{font-size:2.15rem}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+      .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .contact-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px}
+      .contact-info,.formbox{padding:22px}
+    }
+
+  </style>
 </head>
 <body>
   <!--
