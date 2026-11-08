@@ -1370,6 +1370,22 @@
     #enquiryForm .form-note{line-height:1.5}
     @media(max-width:600px){#enquiryForm{grid-template-columns:1fr;gap:13px}#enquiryForm label{grid-column:1/-1}#enquiryForm .service-results{max-height:260px}#enquiryForm input,#enquiryForm select,#enquiryForm textarea{font-size:16px}}
 
+  
+    /* Native Android select popups are intentionally replaced by in-page pickers */
+    #enquiryForm select#serviceSelect{display:none!important}
+    #enquiryForm .business-type-field,#enquiryForm .service-required-field{position:relative;grid-column:1/-1}
+    #enquiryForm input.picker-search,#enquiryForm input.service-search{width:100%;min-height:50px;padding:13px 15px;border:1px solid rgba(105,183,255,.32);border-radius:12px;background:#0a1d33;color:#f4f8ff;font-size:16px;font-weight:550;text-align:left}
+    #enquiryForm input.picker-search::placeholder,#enquiryForm input.service-search::placeholder{color:#8299b5}
+    #enquiryForm .picker-results,#enquiryForm .service-results{display:none;width:100%;max-height:270px;overflow-y:auto;overscroll-behavior:contain;border:1px solid rgba(132,176,229,.22);border-radius:12px;background:#091a2e;padding:7px;box-shadow:0 14px 32px rgba(0,0,0,.24)}
+    #enquiryForm .picker-results.is-open,#enquiryForm .service-results.is-open{display:block}
+    #enquiryForm .picker-group-title,#enquiryForm .service-group-title{padding:9px 10px 5px;color:#69d9d0;font-size:.69rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-align:left}
+    #enquiryForm .picker-option,#enquiryForm .service-option{display:block;width:100%;padding:10px 11px;border:0;border-radius:8px;background:transparent;color:#e5eef9;text-align:left;font:inherit;font-size:.86rem;line-height:1.35;cursor:pointer}
+    #enquiryForm .picker-option:hover,#enquiryForm .picker-option:focus,#enquiryForm .service-option:hover,#enquiryForm .service-option:focus{background:rgba(94,159,225,.15);outline:none;color:#fff}
+    #enquiryForm .picker-empty,#enquiryForm .service-empty{padding:12px;color:#9fb4ce;font-size:.82rem;text-align:left}
+    #enquiryForm .business-type-other{margin-top:7px!important}
+    #enquiryForm .service-selection-hint{font-size:.74rem;color:#93a9c3;font-weight:400;text-align:left}
+    @media(max-width:600px){#enquiryForm .picker-results,#enquiryForm .service-results{max-height:230px}#enquiryForm .picker-option,#enquiryForm .service-option{padding:11px;font-size:.84rem}}
+
   </style>
 </head>
 <body>
@@ -1697,16 +1713,10 @@
               <label>Your Name *<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
               <label>Mobile / WhatsApp *<input name="phone" required autocomplete="tel" placeholder="Your contact number"></label>
               <label>Email Address<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
-              <label>Business Type *
-                <select name="businessType" required>
-                  <option value="">Select business type</option>
-                  <optgroup label="Education"><option>School</option><option>College / University</option><option>Tuition Centre / Academy</option><option>Training / Skill Development Institute</option><option>Online Education / E-learning</option></optgroup>
-                  <optgroup label="Healthcare"><option>Hospital</option><option>Clinic / Medical Centre</option><option>Dental Clinic</option><option>Diagnostic Centre / Laboratory</option><option>Pharmacy</option><option>Wellness / Physiotherapy Centre</option></optgroup>
-                  <optgroup label="Retail & Commerce"><option>Retail Shop / Store</option><option>Supermarket / Wholesale</option><option>Online Store / E-commerce</option><option>Distributor / Trading Business</option><option>Manufacturing / Production</option><option>Food Shop / Bakery / Restaurant</option></optgroup>
-                  <optgroup label="Professional & Local Services"><option>Beauty Parlour / Salon</option><option>Spa / Wellness Centre</option><option>Fitness / Yoga Centre</option><option>Automobile Workshop / Service Centre</option><option>Repair / Maintenance Service</option><option>Consultancy / Professional Services</option><option>Real Estate / Property</option><option>Travel / Tourism / Hospitality</option><option>Transport / Logistics / Delivery</option><option>Construction / Contractor / Engineering</option><option>IT / Software / Technology Company</option><option>Finance / Accounting / Insurance</option></optgroup>
-                  <optgroup label="Organizations & Creative"><option>NGO / Charity / Trust</option><option>Association / Club / Community</option><option>Government / Public Institution</option><option>Event Management / Organizer</option><option>Media / Production House</option><option>Music / Arts / Creative Studio</option><option>Photography / Design Agency</option><option>Marketing / Advertising Agency</option><option>Personal Brand / Freelancer</option></optgroup>
-                  <option value="Other">Other Business / Institution</option>
-                </select>
+              <label class="full business-type-field">Business Type *
+                <input class="picker-search" type="search" id="businessTypeSearch" placeholder="Search or choose your business type" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="businessTypeResults" required>
+                <div class="picker-results" id="businessTypeResults" role="listbox" aria-label="Business types"></div>
+                <input type="hidden" name="businessType" id="businessTypeValue">
                 <input class="business-type-other" name="businessTypeOther" placeholder="Enter your business type" hidden>
               </label>
               <label>Number of Staff / Branches<input name="businessScale" placeholder="e.g. 5 staff, 1 location (optional)"></label>
@@ -1715,7 +1725,7 @@
               <label class="full service-required-field">Service Required *
                 <input class="service-search" type="search" id="serviceSearch" placeholder="Search and select a service" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="serviceResults" aria-describedby="serviceSelectionHint" required>
                 <div class="service-results" id="serviceResults" role="listbox" aria-label="Available services"></div>
-                <select name="service" id="serviceSelect" tabindex="-1" aria-hidden="true">
+                <select name="service" id="serviceSelect" tabindex="-1" aria-hidden="true" required>
                   <option value="">Select the required service (mandatory)</option>
                   <optgroup label="Website, Digital Presence & Online Business">
                     <option>Website Development</option>
@@ -1902,31 +1912,69 @@
       }
     }));
 
-    // Compact searchable service picker built from all grouped options.
+    // Build both pickers inside the page; do not open Android native select dialogs.
     const serviceSearch=document.getElementById('serviceSearch'),serviceSelect=document.getElementById('serviceSelect'),serviceResults=document.getElementById('serviceResults');
-    if(serviceSearch&&serviceSelect&&serviceResults){
-      const groups=Array.from(serviceSelect.querySelectorAll('optgroup'));
-      const render=()=>{
-        const q=serviceSearch.value.trim().toLocaleLowerCase();serviceResults.replaceChildren();let total=0;
-        groups.forEach(group=>{
-          const matches=Array.from(group.querySelectorAll('option')).filter(option=>option.textContent.toLocaleLowerCase().includes(q));
-          if(!matches.length)return;
-          const heading=document.createElement('div');heading.className='service-group-title';heading.textContent=group.label;serviceResults.appendChild(heading);
-          matches.forEach(option=>{
-            const item=document.createElement('button');item.type='button';item.className='service-option';item.setAttribute('role','option');item.textContent=option.textContent;
-            item.addEventListener('click',()=>{serviceSelect.value=option.value;serviceSearch.value=option.textContent;serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')});
-            serviceResults.appendChild(item);total++;
+    const businessSearch=document.getElementById('businessTypeSearch'),businessValue=document.getElementById('businessTypeValue'),businessResults=document.getElementById('businessTypeResults');
+    const businessGroups=[
+      {label:'Education',items:['School','College / University','Tuition Centre / Academy','Training / Skill Development Institute','Online Education / E-learning']},
+      {label:'Healthcare',items:['Hospital','Clinic / Medical Centre','Dental Clinic','Diagnostic Centre / Laboratory','Pharmacy','Wellness / Physiotherapy Centre']},
+      {label:'Retail & Commerce',items:['Retail Shop / Store','Supermarket / Wholesale','Online Store / E-commerce','Distributor / Trading Business','Manufacturing / Production','Food Shop / Bakery / Restaurant']},
+      {label:'Professional & Local Services',items:['Beauty Parlour / Salon','Spa / Wellness Centre','Fitness / Yoga Centre','Automobile Workshop / Service Centre','Repair / Maintenance Service','Consultancy / Professional Services','Real Estate / Property','Travel / Tourism / Hospitality','Transport / Logistics / Delivery','Construction / Contractor / Engineering','IT / Software / Technology Company','Finance / Accounting / Insurance']},
+      {label:'Organizations & Creative',items:['NGO / Charity / Trust','Association / Club / Community','Government / Public Institution','Event Management / Organizer','Media / Production House','Music / Arts / Creative Studio','Photography / Design Agency','Marketing / Advertising Agency','Personal Brand / Freelancer']},
+      {label:'Other',items:['Other Business / Institution']}
+    ];
+    function closePickers(except){
+      [[businessResults,businessSearch],[serviceResults,serviceSearch]].forEach(([panel,input])=>{
+        if(panel&&input&&panel!==except){panel.classList.remove('is-open');input.setAttribute('aria-expanded','false')}
+      });
+    }
+    if(businessSearch&&businessValue&&businessResults){
+      const renderBusiness=()=>{
+        const q=businessSearch.value.trim().toLowerCase();businessResults.replaceChildren();let count=0;
+        businessGroups.forEach(group=>{
+          const found=group.items.filter(item=>item.toLowerCase().includes(q));if(!found.length)return;
+          const title=document.createElement('div');title.className='picker-group-title';title.textContent=group.label;businessResults.appendChild(title);
+          found.forEach(item=>{
+            const button=document.createElement('button');button.type='button';button.className='picker-option';button.setAttribute('role','option');button.textContent=item;
+            button.addEventListener('click',()=>{
+              businessValue.value=item;businessSearch.value=item;
+              const other=document.querySelector('input[name="businessTypeOther"]');
+              if(other){const show=item==='Other Business / Institution';other.hidden=!show;other.required=show;if(!show)other.value=''}
+              businessResults.classList.remove('is-open');businessSearch.setAttribute('aria-expanded','false');
+            });
+            businessResults.appendChild(button);count++;
           });
         });
-        if(!total){const empty=document.createElement('div');empty.className='service-empty';empty.textContent='No match found. Try another keyword or choose the custom requirement option.';serviceResults.appendChild(empty)}
+        if(!count){const empty=document.createElement('div');empty.className='picker-empty';empty.textContent='No matching type. Choose Other Business / Institution to enter your category.';businessResults.appendChild(empty)}
       };
-      serviceSearch.addEventListener('focus',()=>{render();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
-      serviceSearch.addEventListener('input',()=>{serviceSelect.value='';render();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
-      document.addEventListener('click',event=>{if(!serviceResults.contains(event.target)&&event.target!==serviceSearch){serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')}});
-      serviceSearch.addEventListener('keydown',event=>{if(event.key==='Escape'){serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')}});
+      businessSearch.addEventListener('focus',()=>{closePickers(businessResults);renderBusiness();businessResults.classList.add('is-open');businessSearch.setAttribute('aria-expanded','true')});
+      businessSearch.addEventListener('input',()=>{businessValue.value='';renderBusiness();businessResults.classList.add('is-open');businessSearch.setAttribute('aria-expanded','true')});
     }
-    const businessTypeSelect=document.querySelector('select[name="businessType"]'),businessTypeOther=document.querySelector('input[name="businessTypeOther"]');
-    if(businessTypeSelect&&businessTypeOther)businessTypeSelect.addEventListener('change',()=>{const show=businessTypeSelect.value==='Other';businessTypeOther.hidden=!show;businessTypeOther.required=show;if(!show)businessTypeOther.value=''});
+    if(serviceSearch&&serviceSelect&&serviceResults){
+      const groups=Array.from(serviceSelect.querySelectorAll('optgroup'));
+      const renderServices=()=>{
+        const q=serviceSearch.value.trim().toLowerCase();serviceResults.replaceChildren();let count=0;
+        groups.forEach(group=>{
+          const found=Array.from(group.querySelectorAll('option')).filter(option=>option.textContent.toLowerCase().includes(q));if(!found.length)return;
+          const title=document.createElement('div');title.className='service-group-title';title.textContent=group.label;serviceResults.appendChild(title);
+          found.forEach(option=>{
+            const button=document.createElement('button');button.type='button';button.className='service-option';button.setAttribute('role','option');button.textContent=option.textContent;
+            button.addEventListener('click',()=>{serviceSelect.value=option.value;serviceSearch.value=option.textContent;serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')});
+            serviceResults.appendChild(button);count++;
+          });
+        });
+        if(!count){const empty=document.createElement('div');empty.className='service-empty';empty.textContent='No matching service. Try another keyword or choose the custom requirement option.';serviceResults.appendChild(empty)}
+      };
+      serviceSearch.addEventListener('focus',()=>{closePickers(serviceResults);renderServices();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
+      serviceSearch.addEventListener('input',()=>{serviceSelect.value='';renderServices();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
+    }
+    document.addEventListener('click',event=>{
+      if(businessResults&&!businessResults.contains(event.target)&&event.target!==businessSearch){businessResults.classList.remove('is-open');businessSearch?.setAttribute('aria-expanded','false')}
+      if(serviceResults&&!serviceResults.contains(event.target)&&event.target!==serviceSearch){serviceResults.classList.remove('is-open');serviceSearch?.setAttribute('aria-expanded','false')}
+    });
+    [businessSearch,serviceSearch].forEach(input=>input?.addEventListener('keydown',event=>{
+      if(event.key==='Escape'){closePickers();input.blur()}
+    }));
 
     document.getElementById('enquiryForm').addEventListener('submit', async function(event) {
       event.preventDefault();
@@ -1935,7 +1983,8 @@
       if (submitButton.disabled) return;
 
       const data = Object.fromEntries(new FormData(form).entries());
-      if(data.businessType==='Other')data.businessType=data.businessTypeOther||'Other business / institution';
+      data.businessType = businessValue?.value || '';
+      if(data.businessType==='Other Business / Institution')data.businessType=data.businessTypeOther||'Other business / institution';
       delete data.businessTypeOther;
       const status = document.getElementById('formStatus');
       const subject = encodeURIComponent('OJILZTAG.COM Enquiry - ' + data.service);
