@@ -232,6 +232,12 @@
       .brand-name{font-size:1.62rem}
     }
 
+    .contact-meta{display:grid;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+    .contact-note-card{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding:14px 15px;border:1px solid rgba(145,184,228,.14);border-radius:15px;background:linear-gradient(135deg,rgba(24,54,85,.72),rgba(10,29,50,.78))}
+    .contact-note-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:rgba(99,234,219,.1);font-size:1.05rem}
+    .contact-note-card strong{display:block;color:#f4f8ff;font-size:.88rem;line-height:1.35;margin:1px 0 4px}
+    .contact-note-card p{margin:0;color:var(--muted);font-size:.81rem;line-height:1.6}
+    .contact-note-card p b{color:#fff}
     .contact-points{margin:8px 0 20px;padding-left:20px;color:var(--muted);font-size:.93rem;line-height:1.75}
     .contact-points li{padding:4px 0}
     /* Desktop navigation and contact: one clear, confident composition */
@@ -440,7 +446,11 @@
         <div class="contact-grid">
           <aside class="contact-info"><span class="contact-kicker">PROJECT ENQUIRY</span><h3>Let's understand what you need.</h3><p>Use the enquiry form to tell us about your business, idea or project. Select the service you are interested in and share the outcome you want to achieve.</p>
             <ul class="contact-points"><li>Choose the relevant service or solution.</li><li>Describe the features, support or deliverables you need.</li><li>Add an optional budget range and preferred timeline.</li><li>Provide your contact details so we can respond to your enquiry.</li></ul>
-            <div class="contact-meta"><span>🌍 Enquiries welcome from India and internationally</span><span>✉️ Your completed enquiry is prepared in WhatsApp when you submit the form. Review the details and press Send there.</span><span>🔒 Do not include passwords, OTPs or payment PINs.</span></div>
+            <div class="contact-meta">
+              <div class="contact-note-card"><span class="contact-note-icon" aria-hidden="true">🌍</span><div><strong>Where we work</strong><p>We welcome project enquiries from across India and around the world.</p></div></div>
+              <div class="contact-note-card"><span class="contact-note-icon" aria-hidden="true">✉️</span><div><strong>How your enquiry is sent</strong><p>After you submit the form, your enquiry details open in WhatsApp. Review the message and tap <b>Send</b> to share it with OJILZTAG.COM.</p></div></div>
+              <div class="contact-note-card"><span class="contact-note-icon" aria-hidden="true">🔒</span><div><strong>Keep your information safe</strong><p>Do not enter passwords, OTPs, payment PINs or confidential account credentials in the form.</p></div></div>
+            </div>
           </aside>
           <div class="formbox" id="enquiry"><span class="eyebrow">PROJECT BRIEF</span><h2 style="margin:10px 0 18px">Tell us what you need</h2>
             <form id="enquiryForm">
