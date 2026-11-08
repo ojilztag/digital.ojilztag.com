@@ -1386,6 +1386,73 @@
     #enquiryForm .service-selection-hint{font-size:.74rem;color:#93a9c3;font-weight:400;text-align:left}
     @media(max-width:600px){#enquiryForm .picker-results,#enquiryForm .service-results{max-height:230px}#enquiryForm .picker-option,#enquiryForm .service-option{padding:11px;font-size:.84rem}}
 
+  
+    /* Final contrast correction for the light enquiry panel */
+    #enquiryForm label,
+    #enquiryForm .service-required-field,
+    #enquiryForm .business-type-field{
+      color:#19324d!important;
+      opacity:1!important;
+      text-align:left!important;
+    }
+    #enquiryForm input:not([type="hidden"]),
+    #enquiryForm textarea,
+    #enquiryForm select:not([tabindex="-1"]){
+      color:#172b40!important;
+      background:#ffffff!important;
+      border:1px solid #b8c8d8!important;
+      opacity:1!important;
+      -webkit-text-fill-color:#172b40;
+    }
+    #enquiryForm input::placeholder,
+    #enquiryForm textarea::placeholder,
+    #enquiryForm input.picker-search::placeholder,
+    #enquiryForm input.service-search::placeholder{
+      color:#64788e!important;
+      opacity:1!important;
+      -webkit-text-fill-color:#64788e;
+    }
+    #enquiryForm input.picker-search,
+    #enquiryForm input.service-search{
+      color:#172b40!important;
+      background:#ffffff!important;
+      border:1px solid #aebfd1!important;
+      -webkit-text-fill-color:#172b40;
+    }
+    #enquiryForm .picker-results,
+    #enquiryForm .service-results{
+      background:#ffffff!important;
+      border:1px solid #c6d2df!important;
+      box-shadow:0 12px 28px rgba(20,45,70,.14)!important;
+    }
+    #enquiryForm .picker-group-title,
+    #enquiryForm .service-group-title{
+      color:#087f83!important;
+    }
+    #enquiryForm .picker-option,
+    #enquiryForm .service-option{
+      color:#19324d!important;
+    }
+    #enquiryForm .picker-option:hover,
+    #enquiryForm .picker-option:focus,
+    #enquiryForm .service-option:hover,
+    #enquiryForm .service-option:focus{
+      color:#102b45!important;
+      background:#eaf3fb!important;
+    }
+    #enquiryForm .picker-empty,
+    #enquiryForm .service-empty,
+    #enquiryForm .service-selection-hint,
+    #enquiryForm .form-note{
+      color:#52677d!important;
+      opacity:1!important;
+    }
+    #enquiryForm input:focus,
+    #enquiryForm textarea:focus{
+      border-color:#3185c9!important;
+      box-shadow:0 0 0 3px rgba(49,133,201,.13)!important;
+    }
+
   </style>
 </head>
 <body>
