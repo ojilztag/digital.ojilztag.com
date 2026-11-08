@@ -266,6 +266,13 @@
       .formbox form input,.formbox form select,.formbox form textarea{padding:14px 15px;border-radius:12px}
       .formbox form textarea{min-height:145px}
       .formbox form button{padding:15px}
+      .brand-promo-card{position:relative;overflow:hidden;margin-top:24px;padding:23px 25px;border:1px solid rgba(99,234,219,.2);border-radius:18px;background:radial-gradient(circle at 92% 12%,rgba(99,234,219,.13),transparent 34%),linear-gradient(110deg,rgba(17,52,78,.92),rgba(10,30,51,.95))}
+      .brand-promo-card:after{content:"";position:absolute;width:155px;height:155px;right:-76px;bottom:-100px;border:1px solid rgba(99,234,219,.18);border-radius:50%;box-shadow:0 0 0 18px rgba(99,234,219,.025),0 0 0 36px rgba(99,234,219,.02);pointer-events:none}
+      .promo-overline{color:var(--cyan);font-size:.67rem;font-weight:900;letter-spacing:.16em}
+      .brand-promo-card h3{position:relative;z-index:1;margin:8px 0 7px;color:#f5f9ff;font-size:1.25rem;line-height:1.25}
+      .brand-promo-card p{position:relative;z-index:1;margin:0;color:var(--muted);font-size:.86rem;line-height:1.65;max-width:660px}
+      .promo-steps{position:relative;z-index:1;display:flex;align-items:center;gap:12px;margin-top:17px;color:#dff8ff;font-size:.7rem;font-weight:900;letter-spacing:.12em}
+      .promo-steps i{font-style:normal;color:var(--cyan);font-size:.95rem}
       .footerin{align-items:center}
       .footerlinks{justify-content:flex-end;gap:18px}
     }
@@ -463,6 +470,12 @@
               <p class="form-note">This website prepares your enquiry in WhatsApp. Your message is sent only after you review it and press Send in WhatsApp. Read our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
             </form>
+            <div class="brand-promo-card">
+              <span class="promo-overline">THE OJILZTAG APPROACH</span>
+              <h3>Your idea deserves a smarter digital future.</h3>
+              <p>Start with what matters today. We shape practical digital solutions around your goals, build with purpose and help you move forward—one meaningful step at a time.</p>
+              <div class="promo-steps"><span>IDEA</span><i>→</i><span>CREATE</span><i>→</i><span>GROW</span></div>
+            </div>
           </div>
         </div>
       </div>
