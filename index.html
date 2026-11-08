@@ -936,56 +936,27 @@
 
   
 
-/* GLOBAL READABILITY + CONTRAST AUDIT — Nov 2026 */
-:root{
-  color-scheme:dark;
-  --bg:#050d1b;--bg2:#0a1b30;--card:#102741;
-  --line:rgba(190,213,242,.22);
-  --text:#f7faff;--muted:#c5d3e5;
-  --blue:#78baff;--cyan:#70f0df;--purple:#b7a5ff;
-}
-html{color-scheme:dark}
-body{color:var(--text)}
-/* Explicit foregrounds prevent inherited black text on dark surfaces. */
-.nav,.nav *{color:var(--text)}
-.navlinks{color:#dce8f7}
-.navlinks a{color:#dce8f7}
-.navlinks a:hover,.navlinks a:focus-visible{color:#ffffff}
-.navlinks a[aria-current="page"],.navlinks a.active{color:var(--cyan)}
-.menu{
-  color:#ffffff!important;background:#173653!important;
-  border:1px solid #75baff!important;font-weight:800;
-}
-.menu:hover,.menu:focus-visible{background:#24547d!important;color:#fff!important}
-.navlinks.open{background:#0b1e34!important;border-color:#75baff}
-.navlinks.open a{color:#f4f8ff!important}
-h1,h2,h3,h4,h5,h6,.panel-title,.project-card h3,.featurebox h3,
-.faq summary,.contact-info h3,.formbox h2{color:#f7faff}
-p,li,small,.lead,.panel-sub,.section-head p,.card p,.project-card p,
-.project-card ul,.checklist li,.faq details p,.cta p,.contact-info p,
-.contact-item small,.form-note,.notice{color:#c5d3e5}
-a{color:#8ec8ff}
-a:hover,a:focus-visible{color:#ffffff}
-.btn{color:#061426!important}
-.btn.outline{color:#f7faff!important}
-input,select,textarea,option{color:#f7faff!important;background-color:#0a1b30!important}
-input::placeholder,textarea::placeholder{color:#aebfd4!important;opacity:1}
-label,.contact-info label,form label{color:#e2ebf7!important}
-.tag{color:#e1edfb}
-.footer,.footer *{color:#c5d3e5}
-.footer strong,.footer .brand-core,.footer .brand-domain{color:#f7faff}
-.footer a{color:#b8d9ff}
-.footer a:hover,.footer a:focus-visible{color:#fff}
-.scroll-toggle{color:#f7faff!important}
-button:disabled{opacity:.7;color:#eaf2fb!important}
-:focus-visible{outline:2px solid #70f0df;outline-offset:3px}
-::selection{background:#1b6592;color:#fff}
+
+
+
+/* LIGHT THEME NAVIGATION CONTRAST FIX — preserve the site's approved light palette */
+.nav{color:#183653}
+.nav .brand,.nav .brand-name,.nav .brand-core{color:#173451}
+.nav .brand-domain{color:#079eaa}
+.navlinks,.navlinks a{color:#304b68}
+.navlinks a:hover,.navlinks a:focus-visible{color:#1264b5}
+.menu{display:none;color:#183653!important;background:#ffffff!important;border:1px solid #cbd9e9!important}
 @media(max-width:900px){
- .navlinks{background:#0b1e34!important}
- .navlinks a{color:#f4f8ff!important}
+ .navlinks{background:#ffffff!important;border:1px solid #dce6f2!important;box-shadow:0 12px 24px rgba(30,62,100,.12)}
+ .navlinks a{color:#183653!important}
+ .navlinks a:hover,.navlinks a:focus-visible{color:#075fae!important}
+ .menu{display:block;color:#183653!important;background:#ffffff!important;border:1px solid #9eb8d4!important}
+}
+@media(max-width:600px){
+ .navlinks{background:#ffffff!important}
+ .navlinks a{color:#183653!important}
 }
 
-/* END GLOBAL READABILITY AUDIT */
 </style>
 </head>
 <body>
@@ -1002,7 +973,7 @@ button:disabled{opacity:.7;color:#eaf2fb!important}
   <header class="nav">
     <div class="wrap navin">
       <a class="brand" href="#home" aria-label="OJILZTAG.COM — Digital Solutions and Technology"><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><small class="brand-caption">CUSTOMIZED DIGITAL SIGNATURE</small></a>
-      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false" style="color:#fff!important;background:#173653!important;border:1px solid #75baff!important;">☰ Menu</button>
+      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
       <nav class="navlinks" id="navLinks" aria-label="Main navigation">
         <a href="#home">Home</a><a href="#services">Services</a><a href="#systems">Solutions</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
       </nav>
