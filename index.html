@@ -506,6 +506,31 @@
       .card,.project-card,.leadership-card,.featurebox,.contact-info,.formbox{padding:15px}
       .section-head{margin-bottom:16px}
     }
+
+    /* Brand-matched service and project illustrations */
+    .hero-panel-visual{display:block;width:100%;height:auto;max-height:210px;object-fit:contain;object-position:center;margin:0 auto 10px;border-radius:15px}
+    .card-visual{display:block;width:100%;height:154px;object-fit:contain;object-position:center;margin:0 auto 13px;border-radius:14px;background:radial-gradient(ellipse at 50% 60%,rgba(31,119,255,.12),transparent 68%)}
+    .project-visual{display:block;width:100%;height:190px;object-fit:contain;object-position:center;border-radius:15px;background:radial-gradient(ellipse at 50% 60%,rgba(41,110,255,.13),transparent 70%);margin-bottom:2px}
+    .project-visual.carolia-visual{object-fit:contain;background:radial-gradient(ellipse at 50% 60%,rgba(181,91,255,.18),transparent 72%)}
+    @media(min-width:1100px){
+      .hero-panel-visual{max-height:225px}
+      .card-visual{height:166px}
+      .project-visual{height:205px}
+    }
+    @media(max-width:900px){
+      .hero-panel-visual{max-height:185px}
+      .card-visual{height:140px}
+      .project-visual{height:175px}
+    }
+    @media(max-width:600px){
+      .hero-panel-visual{max-height:175px;margin-bottom:6px}
+      .card-visual{height:165px;margin-bottom:10px}
+      .project-visual{height:175px}
+    }
+    @media(max-width:380px){
+      .card-visual{height:145px}
+      .project-visual{height:155px}
+    }
     </style>
 </head>
 <body>
@@ -539,7 +564,7 @@
         <div class="hero-actions"><a class="btn" href="#services">Explore Our Services ↓</a><a class="btn outline" href="#contact">Discuss Your Project</a></div>
         <div class="trustline"><span>Solutions shaped around your requirements</span><span>Clear scope before implementation</span><span>Mobile-first digital experiences</span></div>
         <div class="hero-panel">
-          <div><div class="eyebrow">One platform. Complete solutions.</div><div class="panel-title" style="font-size:1.55rem;margin:12px 0 8px">Think Smarter. Build Digital. Grow.</div><div class="panel-sub">An AI-inspired digital solutions experience combining smart workflows, connected technology and human-focused project support.</div></div>
+          <div><img class="hero-panel-visual" src="/assets/hero-digital.svg" alt="Digital solutions represented by a connected laptop and cloud technology" width="900" height="520" fetchpriority="high"><div class="eyebrow">One platform. Complete solutions.</div><div class="panel-title" style="font-size:1.55rem;margin:12px 0 8px">Think Smarter. Build Digital. Grow.</div><div class="panel-sub">An AI-inspired digital solutions experience combining smart workflows, connected technology and human-focused project support.</div></div>
           <div class="mini-grid"><div class="mini">🌐 <b>Web &amp; Apps</b><span class="panel-sub">Digital presence</span></div><div class="mini">🎉 <b>Event Tech</b><span class="panel-sub">Online experiences</span></div><div class="mini">⚙️ <b>Automation</b><span class="panel-sub">Smarter workflows</span></div><div class="mini">📢 <b>Marketing</b><span class="panel-sub">Digital visibility</span></div></div>
         </div>
       </div>
@@ -549,9 +574,9 @@
  <div class="wrap">
   <div class="section-head"><span class="eyebrow">What OJILZTAG.COM does</span><h2>One partner. Three connected areas of work.</h2><p>We combine digital presence, custom technology and creative production. Choose the area that matches your goal; the detailed services are organized in their dedicated sections below.</p></div>
   <div class="grid">
-   <article class="card"><div class="icon">🌐</div><h3>Digital Presence & Online Business</h3><p>Websites, domains, hosting, online stores, discoverability and digital promotion for businesses and projects.</p><div class="link-row"><a class="btn outline" href="#systems">Explore digital systems ↗</a></div></article>
-   <article class="card"><div class="icon">⚙️</div><h3>Custom Systems & Automation</h3><p>Domain email, AI, CRM, payment workflows and management software designed around real operational needs.</p><div class="link-row"><a class="btn outline" href="#systems">Explore technology solutions ↗</a></div></article>
-   <article class="card"><div class="icon">🎨</div><h3>Creative Media & Production</h3><p>Design, video, music, photography, publishing and brand content through AI-assisted or human-led production.</p><div class="link-row"><a class="btn outline" href="#creative-media">Explore creative services ↗</a></div></article>
+   <article class="card"><img class="card-visual" src="/assets/visual-website.svg" alt="Website and online presence illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Digital Presence & Online Business</h3><p>Websites, domains, hosting, online stores, discoverability and digital promotion for businesses and projects.</p><div class="link-row"><a class="btn outline" href="#systems">Explore digital systems ↗</a></div></article>
+   <article class="card"><img class="card-visual" src="/assets/visual-automation.svg" alt="Connected AI systems and workflow automation illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Custom Systems & Automation</h3><p>Domain email, AI, CRM, payment workflows and management software designed around real operational needs.</p><div class="link-row"><a class="btn outline" href="#systems">Explore technology solutions ↗</a></div></article>
+   <article class="card"><img class="card-visual" src="/assets/visual-creative.svg" alt="Creative media camera and video production illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Creative Media & Production</h3><p>Design, video, music, photography, publishing and brand content through AI-assisted or human-led production.</p><div class="link-row"><a class="btn outline" href="#creative-media">Explore creative services ↗</a></div></article>
   </div>
  </div>
 </section>
@@ -622,8 +647,8 @@
  <div class="wrap">
   <div class="section-head"><span class="eyebrow">Live projects & demonstrations</span><h2>See the concepts in context.</h2><p>Explore separate OJILZTAG.COM project websites to understand how different digital experiences can be organized. Each project keeps its own identity.</p></div>
   <div class="project-grid">
-   <article class="project-card"><span class="project-label">Event service platform</span><div class="icon">🎪</div><h3>MY EVENT · MYEVENT HOSTING</h3><p>An OJILZTAG.COM event website and digital management service concept for organizers who need event pages, online registration, participant information workflows, communications and reporting.</p><ul><li>Event website and information publishing</li><li>Registration and enquiry workflows</li><li>Participant and event data management</li><li>Workflow automation and reporting options</li></ul><a class="btn" href="https://myevent.ojilztag.com/" target="_blank" rel="noopener noreferrer">Explore MY EVENT ↗</a></article>
-   <article class="project-card"><span class="project-label">Competition website</span><div class="icon">🎄</div><h3>CAROLIA 2026</h3><p>An online Christmas Carol Singing Competition presented by Mathruvedhi Teams. It is a separate event website and a practical example of an online competition experience.</p><ul><li>Competition information and rules</li><li>Participant registration workflow</li><li>Registration ID and status-check features</li><li>Event notices and organizer information</li></ul><a class="btn" href="https://carolia.ojilztag.com/" target="_blank" rel="noopener noreferrer">Visit CAROLIA 2026 ↗</a></article>
+   <article class="project-card"><span class="project-label">Event service platform</span><img class="project-visual" src="/assets/visual-event-platform.svg" alt="Event registration and digital event management platform illustration" width="640" height="420" loading="lazy" decoding="async"><h3>MY EVENT · MYEVENT HOSTING</h3><p>An OJILZTAG.COM event website and digital management service concept for organizers who need event pages, online registration, participant information workflows, communications and reporting.</p><ul><li>Event website and information publishing</li><li>Registration and enquiry workflows</li><li>Participant and event data management</li><li>Workflow automation and reporting options</li></ul><a class="btn" href="https://myevent.ojilztag.com/" target="_blank" rel="noopener noreferrer">Explore MY EVENT ↗</a></article>
+   <article class="project-card"><span class="project-label">Competition website</span><img class="project-visual carolia-visual" src="/assets/visual-carolia.svg" alt="Festive Christmas carol competition illustration" width="640" height="420" loading="lazy" decoding="async"><h3>CAROLIA 2026</h3><p>An online Christmas Carol Singing Competition presented by Mathruvedhi Teams. It is a separate event website and a practical example of an online competition experience.</p><ul><li>Competition information and rules</li><li>Participant registration workflow</li><li>Registration ID and status-check features</li><li>Event notices and organizer information</li></ul><a class="btn" href="https://carolia.ojilztag.com/" target="_blank" rel="noopener noreferrer">Visit CAROLIA 2026 ↗</a></article>
   </div>
   <div class="capability-note"><strong style="color:#fff">Project transparency:</strong> MY EVENT is presented as the event service platform. CAROLIA 2026 is presented as a specific competition website. Custom modules and service availability depend on the agreed scope.</div>
  </div>
