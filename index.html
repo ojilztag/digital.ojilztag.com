@@ -1725,7 +1725,7 @@
               <label class="full service-required-field">Service Required *
                 <input class="service-search" type="search" id="serviceSearch" placeholder="Search and select a service" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="serviceResults" aria-describedby="serviceSelectionHint" required>
                 <div class="service-results" id="serviceResults" role="listbox" aria-label="Available services"></div>
-                <select name="service" id="serviceSelect" tabindex="-1" aria-hidden="true" required>
+                <select name="service" id="serviceSelect" tabindex="-1" aria-hidden="true">
                   <option value="">Select the required service (mandatory)</option>
                   <optgroup label="Website, Digital Presence & Online Business">
                     <option>Website Development</option>
@@ -1937,7 +1937,7 @@
           found.forEach(item=>{
             const button=document.createElement('button');button.type='button';button.className='picker-option';button.setAttribute('role','option');button.textContent=item;
             button.addEventListener('click',()=>{
-              businessValue.value=item;businessSearch.value=item;
+              businessValue.value=item;businessSearch.value=item;businessSearch.setCustomValidity('');
               const other=document.querySelector('input[name="businessTypeOther"]');
               if(other){const show=item==='Other Business / Institution';other.hidden=!show;other.required=show;if(!show)other.value=''}
               businessResults.classList.remove('is-open');businessSearch.setAttribute('aria-expanded','false');
@@ -1948,7 +1948,8 @@
         if(!count){const empty=document.createElement('div');empty.className='picker-empty';empty.textContent='No matching type. Choose Other Business / Institution to enter your category.';businessResults.appendChild(empty)}
       };
       businessSearch.addEventListener('focus',()=>{closePickers(businessResults);renderBusiness();businessResults.classList.add('is-open');businessSearch.setAttribute('aria-expanded','true')});
-      businessSearch.addEventListener('input',()=>{businessValue.value='';renderBusiness();businessResults.classList.add('is-open');businessSearch.setAttribute('aria-expanded','true')});
+      businessSearch.setCustomValidity('Choose a business type from the list.');
+      businessSearch.addEventListener('input',()=>{businessValue.value='';businessSearch.setCustomValidity('Choose a business type from the list.');renderBusiness();businessResults.classList.add('is-open');businessSearch.setAttribute('aria-expanded','true')});
     }
     if(serviceSearch&&serviceSelect&&serviceResults){
       const groups=Array.from(serviceSelect.querySelectorAll('optgroup'));
@@ -1959,14 +1960,15 @@
           const title=document.createElement('div');title.className='service-group-title';title.textContent=group.label;serviceResults.appendChild(title);
           found.forEach(option=>{
             const button=document.createElement('button');button.type='button';button.className='service-option';button.setAttribute('role','option');button.textContent=option.textContent;
-            button.addEventListener('click',()=>{serviceSelect.value=option.value;serviceSearch.value=option.textContent;serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')});
+            button.addEventListener('click',()=>{serviceSelect.value=option.value;serviceSearch.value=option.textContent;serviceSearch.setCustomValidity('');serviceResults.classList.remove('is-open');serviceSearch.setAttribute('aria-expanded','false')});
             serviceResults.appendChild(button);count++;
           });
         });
         if(!count){const empty=document.createElement('div');empty.className='service-empty';empty.textContent='No matching service. Try another keyword or choose the custom requirement option.';serviceResults.appendChild(empty)}
       };
+      serviceSearch.setCustomValidity('Choose a service from the list.');
       serviceSearch.addEventListener('focus',()=>{closePickers(serviceResults);renderServices();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
-      serviceSearch.addEventListener('input',()=>{serviceSelect.value='';renderServices();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
+      serviceSearch.addEventListener('input',()=>{serviceSelect.value='';serviceSearch.setCustomValidity('Choose a service from the list.');renderServices();serviceResults.classList.add('is-open');serviceSearch.setAttribute('aria-expanded','true')});
     }
     document.addEventListener('click',event=>{
       if(businessResults&&!businessResults.contains(event.target)&&event.target!==businessSearch){businessResults.classList.remove('is-open');businessSearch?.setAttribute('aria-expanded','false')}
