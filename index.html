@@ -1324,7 +1324,13 @@
       .section-head{margin-bottom:12px!important}
     }
 
-  </style>
+  
+    /* Enquiry fields: free-text service selection, clear left alignment */
+    .formbox form .service-required-field{grid-column:1/-1;text-align:left;justify-self:stretch}
+    .formbox form .service-required-field input{text-align:left;display:block;width:100%;text-align:left}
+    .formbox form label{text-align:left}
+    .formbox form input,.formbox form textarea,.formbox form select{text-align:left}
+</style>
 </head>
 <body>
   <!--
@@ -1651,73 +1657,12 @@
               <label>Your Name *<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
               <label>Mobile / WhatsApp *<input name="phone" required autocomplete="tel" placeholder="Your contact number"></label>
               <label>Email Address<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
-              <label>Business Type (if applicable)<select name="businessType"><option value="">Select business type</option><option>Beauty Parlour / Hair Salon</option><option>Spa / Wellness Centre</option><option>Dental / Skin / Other Clinic</option><option>Fitness / Yoga / Training Centre</option><option>Automobile Service Centre / Garage</option><option>Repair / Maintenance Service</option><option>Consultant / Appointment Professional</option><option>Other Service Business</option><option>Not applicable</option></select></label>
+              <label>Business / Institution Type (if applicable)<input name="businessType" placeholder="e.g. School, College, Hospital, Clinic, Shop, Beauty Parlour, Service Centre, NGO"></label>
               <label>Number of Staff / Branches<input name="businessScale" placeholder="e.g. 5 staff, 1 location (optional)"></label>
               <label>Project Budget (Optional)<input name="budget" placeholder="e.g. ₹10,000–₹25,000 or To be discussed"></label>
               <label>Preferred Timeline (Optional)<input name="timeline" placeholder="e.g. Within 2 weeks / Flexible"></label>
-              <label>Service Required *<select name="service" required>
-                <option value="">Select a service (required)</option>
-                <optgroup label="Digital Presence & Online Business">
-                  <option>Website Development</option>
-                  <option>Landing Page / Business Profile Website</option>
-                  <option>MY STORE — Online Store / E-commerce Setup</option>
-                  <option>OJILZTAG.COM Classified Subscription</option>
-                  <option>Domain Registration, Transfer & DNS Setup</option>
-                  <option>Domain, Hosting, SSL & Cloud Setup</option>
-                  <option>Website Migration, Maintenance & Updates</option>
-                  <option>Custom Domain Email & Business Mailbox Setup</option>
-                </optgroup>
-                <optgroup label="Business Management & Custom Systems">
-                  <option>Business & Organization Management System</option>
-                  <option>CRM & Customer Relationship Management System</option>
-                  <option>SERVIQ — Business Management Platform</option>
-                  <option>Appointment, Booking, Queue & Check-in Management</option>
-                  <option>Service Centre, Garage & Job Card Management</option>
-                  <option>Customer, Staff, Role & Branch Management</option>
-                  <option>Inventory, Stock & Point-of-Sale (POS) System</option>
-                  <option>Billing, Invoice, Receipt & Payment Tracking System</option>
-                  <option>Payment Gateway & Transaction Integration</option>
-                  <option>Hospital & Clinic Management System</option>
-                  <option>School, Student & Education Management System</option>
-                  <option>Student Fees, Collections & Receipt Management</option>
-                </optgroup>
-                <optgroup label="Events, Registration & Community Platforms">
-                  <option>MY EVENT — Event Hosting & Framework</option>
-                  <option>Event Website, Online Registration & Participant Management</option>
-                  <option>Competition, Contest & Community Platform</option>
-                </optgroup>
-                <optgroup label="Automation, AI & Technology Integration">
-                  <option>Email Automation, Auto-Replies & Notifications</option>
-                  <option>WhatsApp Business API & Messaging Integration</option>
-                  <option>SMS, Email & Customer Notification Automation</option>
-                  <option>AI Integration & Intelligent Assistants</option>
-                  <option>Workflow Automation & System Integration</option>
-                  <option>API & Third-Party Technology Integration</option>
-                  <option>Business Digitalization (SEO, Google Visibility & AI Search)</option>
-                </optgroup>
-                <optgroup label="Creative Media & Production">
-                  <option>Creative Media & Production Department</option>
-                  <option>Graphic Design, Logo, Poster, Banner & Branding</option>
-                  <option>Video Editing, Intro, Outro & Motion Graphics</option>
-                  <option>OJILZTAG.COM Music — Music & Audio Production</option>
-                  <option>OJILZTAG.COM Photos — Photography & Image Works</option>
-                  <option>OJILZTAG.COM Beauty — Fashion & Talent Presentation</option>
-                  <option>OJILZTAG.COM E-Books — Writing & Digital Publishing</option>
-                  <option>Creative Campaigns & Brand Content</option>
-                </optgroup>
-                <optgroup label="Marketing & Promotion">
-                  <option>Digital Marketing & Promotion</option>
-                  <option>SEO, Google Business Profile & Local Search Visibility</option>
-                  <option>Social Media Management & Content Promotion</option>
-                  <option>Digital Advertising & Campaign Management</option>
-                </optgroup>
-                <optgroup label="Other Requirements">
-                  <option>Technical Support & Troubleshooting</option>
-                  <option>Custom Digital Projects</option>
-                  <option>Other — I will explain in project requirements</option>
-                </optgroup>
-              </select></label>
-              <label class="full">Project Requirements &amp; Details *<textarea name="message" required placeholder="Describe your goal, current problem, required features or services, expected customer/user workflow, integrations, support needs and any important instructions. Please do not include passwords, OTPs or payment PINs."></textarea></label>
+              <label class="full service-required-field">Service Required *<input type="text" name="service" required autocomplete="off" placeholder="Type the service or system you need (e.g. School Management System, Student Fee & Receipt Management, Hospital Management, Website, CRM, AI Automation)"></label>
+              <label class="full">Project Requirements &amp; Details *<textarea name="message" required placeholder="Describe your requirement with relevant details. For schools / colleges: institution type, student strength, classes, admissions, student profiles / ID, attendance, fees (separate categories, partial or combined payments), receipts, exams, timetable, teachers / staff, parent communication, transport, library, reports and branches. For hospitals / clinics: departments, doctors, appointments, patient registration, billing and reports (do not share medical records here). For other businesses: customer flow, services / products, staff roles, branches, stock, bookings, billing, payments, notifications and reports. Also mention the features, integrations and support you need. Do not include passwords, OTPs or payment PINs."></textarea></label>
               <button class="btn full" type="submit">Send Enquiry ↗</button>
               <p class="form-note">This website prepares your enquiry in WhatsApp. Your message is sent only after you review it and press Send in WhatsApp. Read our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
