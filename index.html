@@ -1653,8 +1653,10 @@
               <label>Email Address<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
               <label>Business Type (if applicable)<select name="businessType"><option value="">Select business type</option><option>Beauty Parlour / Hair Salon</option><option>Spa / Wellness Centre</option><option>Dental / Skin / Other Clinic</option><option>Fitness / Yoga / Training Centre</option><option>Automobile Service Centre / Garage</option><option>Repair / Maintenance Service</option><option>Consultant / Appointment Professional</option><option>Other Service Business</option><option>Not applicable</option></select></label>
               <label>Number of Staff / Branches<input name="businessScale" placeholder="e.g. 5 staff, 1 location (optional)"></label>
+              <label>Project Budget (Optional)<input name="budget" placeholder="e.g. ₹10,000–₹25,000 or To be discussed"></label>
+              <label>Preferred Timeline (Optional)<input name="timeline" placeholder="e.g. Within 2 weeks / Flexible"></label>
               <label>Service Required *<select name="service" required><option value="">Select a service</option><option>MY EVENT — Event Hosting & Framework</option><option>OJILZTAG.COM Classified Subscription</option><option>Website Development</option><option>Domain, Hosting & Cloud Setup</option><option>Custom Domain Email & Business Mailbox Setup</option><option>Email Automation, Auto-Replies & Notifications</option><option>AI Integration & Intelligent Assistants</option><option>CRM & Customer Relationship Management System</option><option>Payment Gateway & Transaction Integration</option><option>Hospital & Clinic Management System</option><option>School & Education Management System</option><option>Business & Organization Management System</option><option>SERVIQ — Business Management Platform</option><option>Workflow Automation & System Integration</option><option>Business Digitalization (SEO, Google Visibility & AI Search)</option><option>API & Technology Integration</option><option>Creative Media & Production Department</option><option>Graphic Design & Poster Studio</option><option>Video Editing & Motion Graphics</option><option>OJILZTAG.COM Music — Music & Audio Production</option><option>OJILZTAG.COM Photos — Photography & Image Works</option><option>OJILZTAG.COM Beauty — Fashion & Talent Presentation</option><option>MY STORE — Online Store Setup</option><option>OJILZTAG.COM E-Books — Writing & Digital Publishing</option><option>Creative Campaigns & Brand Content</option><option>Digital Marketing & Promotion</option><option>Custom Digital Projects</option><option>Technical Support</option><option>Other</option></select></label>
-              <label class="full">Project Details *<textarea name="message" required placeholder="Briefly describe your idea, required features, budget range (optional) and timeline (optional)."></textarea></label>
+              <label class="full">Project Requirements &amp; Details *<textarea name="message" required placeholder="Describe your goal, current problem, required features or services, expected customer/user workflow, integrations, support needs and any important instructions. Please do not include passwords, OTPs or payment PINs."></textarea></label>
               <button class="btn full" type="submit">Send Enquiry ↗</button>
               <p class="form-note">This website prepares your enquiry in WhatsApp. Your message is sent only after you review it and press Send in WhatsApp. Read our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
@@ -1747,7 +1749,7 @@
       const subject = encodeURIComponent('OJILZTAG.COM Enquiry - ' + data.service);
       const body = encodeURIComponent(
         'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + (data.email || 'Not provided') +
-        '\nService: ' + data.service + '\nBusiness type: ' + (data.businessType || 'Not provided') + '\nBusiness scale: ' + (data.businessScale || 'Not provided') + '\n\nProject details:\n' + data.message
+        '\nService: ' + data.service + '\nBusiness type: ' + (data.businessType || 'Not provided') + '\nBusiness scale: ' + (data.businessScale || 'Not provided') + '\nProject budget: ' + (data.budget || 'Not provided') + '\nPreferred timeline: ' + (data.timeline || 'Not provided') + '\n\nProject requirements and details:\n' + data.message
       );
       const whatsappText = encodeURIComponent(
         '*OJILZTAG.COM — NEW ENQUIRY*\n' +
@@ -1757,10 +1759,12 @@
         'Mobile: ' + data.phone + '\n' +
         'Email: ' + (data.email || 'Not provided') + '\n' +
         'Business type: ' + (data.businessType || 'Not provided') + '\n' +
-        'Staff / branches: ' + (data.businessScale || 'Not provided') + '\n\n' +
+        'Staff / branches: ' + (data.businessScale || 'Not provided') + '\n' +
+        'Project budget: ' + (data.budget || 'Not provided') + '\n' +
+        'Preferred timeline: ' + (data.timeline || 'Not provided') + '\n\n' +
         '*Service Required*\n' +
         data.service + '\n\n' +
-        '*Project Details*\n' +
+        '*Project Requirements & Details*\n' +
         data.message + '\n\n' +
         '━━━━━━━━━━━━━━━━━━\n' +
         'Source: digital.ojilztag.com\n' +
