@@ -231,6 +231,40 @@
       .navcta{padding:10px 13px;font-size:.8rem}
       .brand-name{font-size:1.62rem}
     }
+
+    /* Desktop navigation and contact: one clear, confident composition */
+    @media(min-width:1100px){
+      .navin{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:28px;min-height:88px}
+      .navlinks{justify-content:center;gap:clamp(12px,1.25vw,20px);padding:10px 17px;border:1px solid rgba(145,184,228,.14);border-radius:999px;background:rgba(15,35,59,.72);font-size:.82rem}
+      .navlinks a{padding:7px 2px;transition:color .2s ease}
+      .navlinks a:hover{color:var(--cyan)}
+      .navcta{padding:12px 19px}
+      .contact-section{padding:108px 0 112px;background:radial-gradient(ellipse at 12% 45%,rgba(64,144,220,.12),transparent 38%),linear-gradient(180deg,#071426,#050d1b)}
+      .contact-heading{max-width:760px;margin:0 auto 48px;text-align:center}
+      .contact-heading .eyebrow{justify-content:center}
+      .contact-heading h2{font-size:clamp(2.8rem,4vw,4rem)}
+      .contact-heading p{max-width:620px;margin:0 auto;font-size:1.06rem}
+      .contact-grid{grid-template-columns:.78fr 1.22fr;gap:25px;align-items:stretch;max-width:1120px;margin:0 auto}
+      .contact-info,.formbox{border-radius:25px;padding:38px}
+      .contact-info{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(150deg,#102b49,#0a1b30);border-color:rgba(105,169,255,.2)}
+      .contact-kicker{font-size:.72rem;font-weight:850;letter-spacing:.16em;color:var(--cyan)}
+      .contact-info h3{font-size:2rem;line-height:1.15;margin:17px 0 12px}
+      .contact-info>p{font-size:1rem;line-height:1.75;margin:0 0 25px}
+      .contact-whatsapp{align-self:flex-start;padding:14px 22px}
+      .contact-meta{display:grid;gap:13px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:.83rem;color:var(--muted)}
+      .formbox{background:linear-gradient(145deg,#102642,#0a1b30);box-shadow:0 22px 60px rgba(0,0,0,.2)}
+      .formbox form{gap:17px}
+      .formbox form label{font-size:.86rem}
+      .formbox form input,.formbox form select,.formbox form textarea{padding:14px 15px;border-radius:12px}
+      .formbox form textarea{min-height:145px}
+      .formbox form button{padding:15px}
+      .footerin{align-items:center}
+      .footerlinks{justify-content:flex-end;gap:18px}
+    }
+    @media(min-width:1100px) and (max-width:1240px){
+      .navin{gap:14px}
+      .navlinks{gap:10px;padding:8px 12px;font-size:.76rem}
+    }
     </style>
 </head>
 <body>
@@ -248,8 +282,8 @@
     <div class="wrap navin">
       <a class="brand" href="#home" aria-label="OJILZTAG.COM — Digital Solutions and Technology"><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><small class="brand-caption">CUSTOMIZED DIGITAL SIGNATURE</small></a>
       <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
-      <nav class="navlinks" id="navLinks">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#systems">Technology Systems</a><a href="#creative-media">Creative Media</a><a href="#solutions">Who We Serve</a><a href="#projects">Projects</a><a href="#marketing">Why OJILZTAG.COM</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#systems">Solutions</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
       </nav>
       <a class="btn navcta" href="#contact">Start a Project ↗</a>
     </div>
@@ -398,17 +432,15 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section contact-section" id="contact">
       <div class="wrap">
-        <div class="cta" style="margin-bottom:26px"><div><h2>Have an idea? Let's make it digital.</h2><p>Tell us what you want to build, improve or promote.</p></div><a class="btn" href="#enquiry">Start Your Enquiry ↘</a></div>
+        <div class="section-head contact-heading"><span class="eyebrow">Start a conversation</span><h2>Let's build the right digital solution.</h2><p>Share your goal. We’ll help shape a practical plan around your requirements, timeline and budget.</p></div>
         <div class="contact-grid">
-          <aside class="contact-info"><span class="eyebrow">Get in touch</span><h2 style="margin:12px 0">Let's talk about your project.</h2><p>Choose a service, describe your requirement and send an enquiry. Our team can follow up using the contact details you provide.</p>
-            <div class="contact-item">💬 <strong>WhatsApp Enquiries</strong><small><a href="https://wa.me/919447342070" target="_blank" rel="noopener noreferrer">Chat with OJILZTAG.COM on WhatsApp ↗</a></small></div>
-            <div class="contact-item">📋 <strong>Project Enquiry Form</strong><small>Submit your requirements and review the prepared WhatsApp message before sending it.</small></div>
-            <div class="contact-item">🌍 <strong>Service Coverage</strong><small>India and international project enquiries.</small></div>
-            <p class="notice">For your safety, never submit passwords, OTPs, payment PINs or private API keys through this form.</p>
+          <aside class="contact-info"><span class="contact-kicker">DIRECT ENQUIRY</span><h3>Have a project in mind?</h3><p>For a quick conversation, reach us on WhatsApp. For a detailed request, use the project form.</p>
+            <a class="btn contact-whatsapp" href="https://wa.me/919447342070" target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
+            <div class="contact-meta"><span>🌍 India &amp; international enquiries</span><span>🔒 Share only information needed for your enquiry</span></div>
           </aside>
-          <div class="formbox" id="enquiry"><span class="eyebrow">Project enquiry</span><h2 style="margin:10px 0 18px">Tell us what you need</h2>
+          <div class="formbox" id="enquiry"><span class="eyebrow">PROJECT BRIEF</span><h2 style="margin:10px 0 18px">Tell us what you need</h2>
             <form id="enquiryForm">
               <label>Your Name *<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
               <label>Mobile / WhatsApp *<input name="phone" required autocomplete="tel" placeholder="Your contact number"></label>
@@ -425,7 +457,7 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footerin"><div><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><br> Your Complete Digitalization &amp; Technology Partner.<br><small>© <span id="year"></span> OJILZTAG.COM. All rights reserved.</small></div><div class="footerlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#leadership">Founder & CEO</a><a href="https://myevent.ojilztag.com/" target="_blank" rel="noopener noreferrer">MY EVENT</a><a href="https://carolia.ojilztag.com/" target="_blank" rel="noopener noreferrer">CAROLIA 2026</a><a href="https://ceo.ojilztag.com/" target="_blank" rel="noopener noreferrer">CEO Profile</a><a href="#contact">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div></div></footer>
+  <footer class="footer"><div class="wrap footerin"><div><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><br> Your Complete Digitalization &amp; Technology Partner.<br><small>© <span id="year"></span> OJILZTAG.COM. All rights reserved.</small></div><div class="footerlinks"><a href="#services">Services</a><a href="#systems">Solutions</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></footer>
   <button class="scroll-toggle" id="scrollToggle" type="button" aria-label="Scroll to bottom" title="Scroll to bottom">↓</button>
 
   <script>
