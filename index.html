@@ -1978,13 +1978,11 @@
       .serviq-approach-step .number{font-size:.6rem}
     }
     /* SEO package card follows the same pricing-card treatment as the main pricing section */
-    .seo-price-card{width:100%;max-width:none;margin:18px 0 0}
+    .seo-visibility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .seo-price-card{width:auto;max-width:none;margin:0}
     .seo-price-card .taglist{margin-top:auto;padding-top:13px}
     .seo-price-card .starting-price{margin-top:14px}
     .seo-price-note{max-width:900px;margin:12px 0 0;text-align:left}
-    @media(min-width:651px) and (max-width:900px){
-      .seo-visibility-grid>.card:nth-child(3){grid-column:1/-1}
-    }
     /* Keep the mobile menu compact, with a small rounded finish below Contact and no motion. */
     @media(max-width:900px){
       .navlinks,.navlinks.open{
@@ -2084,14 +2082,14 @@
    <article class="card"><div class="icon">📊</div><h3>1. Google Analytics 4 Setup</h3><p>Create or configure a GA4 property and website data stream, connect the measurement tag, enable enhanced measurement and verify that visits and page views appear in Realtime reporting.</p><div class="taglist"><span class="tag">GA4 Property</span><span class="tag">Measurement ID</span><span class="tag">Realtime Test</span></div></article>
    <article class="card"><div class="icon">🔎</div><h3>2. Search Console & Indexing Setup</h3><p>Set up Google Search Console, submit the XML sitemap, inspect priority URLs and submit indexing requests. Check sitemap discovery and explain how to monitor indexing status.</p><div class="taglist"><span class="tag">Search Console</span><span class="tag">XML Sitemap</span><span class="tag">URL Inspection</span></div></article>
    <article class="card"><div class="icon">⚡</div><h3>3. Technical SEO & Speed Review</h3><p>Review page titles, meta descriptions, canonical and robots directives, structured data, favicon and social sharing metadata. Run mobile and desktop PageSpeed Insights checks and identify practical improvements.</p><div class="taglist"><span class="tag">On-page SEO</span><span class="tag">Schema Review</span><span class="tag">PageSpeed Audit</span></div></article>
-  </div>
-  <article class="card seo-price-card">
+   <article class="card seo-price-card">
    <div class="icon">🔎</div>
    <h3>Google Search & SEO Starter Setup</h3>
    <p>One-time starter setup for one website, including the listed Google measurement, Search Console, technical SEO and PageSpeed review deliverables, with basic verification and a handover summary.</p>
    <div class="taglist"><span class="tag">One Website</span><span class="tag">GA4 & Search Console</span><span class="tag">Technical SEO</span><span class="tag">PageSpeed Review</span></div>
    <div class="starting-price">One-time setup <strong>₹2,999</strong></div>
-  </article>
+   </article>
+  </div>
   <p class="notice seo-price-note">Google controls crawling, indexing and search rankings; these outcomes cannot be guaranteed. Ongoing SEO/content work, backlink campaigns, Google Ads, paid tools, domain/hosting renewals, third-party fees and major website redevelopment are excluded unless separately agreed.</p>
  </div>
 </section>
