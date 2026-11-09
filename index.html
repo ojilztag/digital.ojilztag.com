@@ -2148,42 +2148,21 @@
     @media(min-width:601px) and (max-width:900px){#serviq .pricing-concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
     @media(max-width:600px){#serviq .pricing-concept-grid{grid-template-columns:1fr!important;gap:11px}}
 
-    /* Dark animated quote label: On-Demand and Custom Quote alternate in one place */
-    .starting-price{font-size:.65rem!important;color:#756a9f!important}
+    /* Static, baseline-aligned pricing label */
+    .starting-price{
+      display:flex;align-items:baseline;gap:6px;
+      font-size:.65rem!important;color:#e05252!important;
+    }
     .starting-price strong,
     #seo-visibility .seo-package-card .starting-price strong{
-      display:inline-block;position:relative;min-width:7.1em;height:1.15em;
-      overflow:visible;font-size:0!important;vertical-align:baseline;font-weight:750;
-      color:#62549b!important;letter-spacing:0;
+      display:inline!important;position:static!important;
+      min-width:0!important;height:auto!important;overflow:visible!important;
+      font-size:.78rem!important;line-height:inherit!important;
+      color:#36a66a!important;font-weight:750!important;
+      vertical-align:baseline!important;letter-spacing:0!important;
     }
     .starting-price strong::before,
-    .starting-price strong::after{
-      position:absolute;left:0;top:0;white-space:nowrap;
-      font-size:.78rem;font-weight:750;line-height:1.15;
-      animation-duration:4.8s;animation-timing-function:ease-in-out;
-      animation-iteration-count:infinite;
-    }
-    .starting-price strong::before{
-      content:"On-Demand";color:#65539d;animation-name:quoteOnDemand;
-    }
-    .starting-price strong::after{
-      content:"Custom Quote";color:#385f88;opacity:0;animation-name:quoteCustom;
-    }
-    @keyframes quoteOnDemand{
-      0%,38%{opacity:1;color:#65539d}
-      48%,90%{opacity:0;color:#65539d}
-      100%{opacity:1;color:#65539d}
-    }
-    @keyframes quoteCustom{
-      0%,38%{opacity:0;color:#385f88}
-      48%,90%{opacity:1;color:#385f88}
-      100%{opacity:0;color:#385f88}
-    }
-    @media(prefers-reduced-motion:reduce){
-      .starting-price strong::before,.starting-price strong::after{animation:none}
-      .starting-price strong::before{content:"On-Demand";opacity:1}
-      .starting-price strong::after{display:none}
-    }
+    .starting-price strong::after{content:none!important;display:none!important}
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
