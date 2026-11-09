@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="title desc">
+<title id="title">Customer follow-up timeline</title>
+<desc id="desc">A customer message moves through a reminder and follow-up to a reply.</desc>
+<defs>
+ <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36dfe8"/><stop offset=".55" stop-color="#8065ff"/><stop offset="1" stop-color="#ffad72"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<ellipse cx="160" cy="184" rx="112" ry="15" fill="#7867ff" opacity=".22" filter="url(#glow)"/>
+<path d="M58 111H262" stroke="url(#line)" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 8"/>
+<g fill="#102653" stroke="url(#line)" stroke-width="4">
+ <circle cx="58" cy="111" r="27"/><circle cx="160" cy="111" r="27"/><circle cx="262" cy="111" r="27"/>
+</g>
+<g fill="none" stroke="#e8fcff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M46 101h24a4 4 0 0 1 4 4v13a4 4 0 0 1-4 4H57l-8 6v-6h-3a4 4 0 0 1-4-4v-13a4 4 0 0 1 4-4z"/>
+ <path d="M160 91c-8 0-14 6-14 14v8l-5 7h38l-5-7v-8c0-8-6-14-14-14z"/><path d="M155 126c2 5 8 5 10 0"/>
+ <path d="M251 105l8 7 14-16"/>
+</g>
+<g fill="#dffaff" font-family="Arial,sans-serif" font-size="10" font-weight="700" text-anchor="middle">
+ <text x="58" y="157">MESSAGE</text><text x="160" y="157">REMINDER</text><text x="262" y="157">REPLY</text>
+</g>
+<g fill="#45e7ed"><circle cx="58" cy="68" r="4"/><circle cx="160" cy="68" r="4"/><circle cx="262" cy="68" r="4"/></g>
+</svg>
