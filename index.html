@@ -1554,6 +1554,57 @@
       .contact-heading{margin-bottom:16px}
       .brand-promo-card{margin-top:14px}
     }
+
+    /* ENQUIRY FORM — concise fields and balanced desktop card height */
+    #enquiryForm{gap:11px}
+    #enquiryForm textarea[name="message"]{min-height:148px!important;height:148px;padding:12px 14px!important}
+    .formbox h2{margin:8px 0 12px!important}
+    .contact-info,.formbox{align-self:stretch}
+    .contact-grid{align-items:stretch}
+    @media(min-width:901px){
+      .contact-info,.formbox{padding:22px!important}
+      #enquiryForm{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      #enquiryForm>label:nth-of-type(1),#enquiryForm>label:nth-of-type(2){grid-column:span 1}
+      #enquiryForm .business-type-field,#enquiryForm .service-required-field,#enquiryForm label.full{grid-column:1/-1}
+      #enquiryForm textarea[name="message"]{min-height:132px!important;height:132px}
+      #enquiryForm .form-note{font-size:.76rem;margin:0}
+      .contact-info h3{font-size:1.72rem;margin:12px 0 9px}
+      .contact-info>p{font-size:.91rem;line-height:1.55;margin-bottom:14px}
+      .contact-points{font-size:.85rem;line-height:1.5}
+      .contact-points li{padding:2px 0}
+      .contact-meta{gap:8px;margin-top:16px;padding-top:13px}
+      .contact-note-card{padding:10px 11px;gap:9px}
+      .contact-note-card p{font-size:.76rem;line-height:1.45}
+    }
+    @media(max-width:900px){
+      #enquiryForm textarea[name="message"]{min-height:150px!important;height:150px}
+    }
+    @media(max-width:600px){
+      #enquiryForm{grid-template-columns:minmax(0,1fr);gap:11px}
+      #enquiryForm>label{grid-column:1/-1}
+      #enquiryForm textarea[name="message"]{min-height:142px!important;height:142px}
+      .contact-info,.formbox{padding:16px!important}
+    }
+    /* Animated neon ring around the founder portrait */
+    .promo-card-visual::after{
+      content:"";
+      position:absolute;
+      z-index:1;
+      width:108px;
+      height:108px;
+      border:2px solid transparent;
+      border-top-color:#78f3ff;
+      border-right-color:#a98bff;
+      border-bottom-color:rgba(99,234,219,.35);
+      border-radius:50%;
+      box-shadow:0 0 9px rgba(88,226,255,.38),inset 0 0 8px rgba(132,111,255,.18);
+      pointer-events:none;
+      animation:ojilztag-neon-spin 4.8s linear infinite;
+    }
+    @keyframes ojilztag-neon-spin{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){
+      .promo-card-visual::after{animation:none}
+    }
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
@@ -1895,16 +1946,12 @@
             <form id="enquiryForm">
               <label>Your Name *<input name="name" required autocomplete="name" placeholder="Enter your name"></label>
               <label>Mobile / WhatsApp *<input name="phone" required autocomplete="tel" placeholder="Your contact number"></label>
-              <label>Email Address<input type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
               <label class="full business-type-field">Business Type *
                 <input class="picker-search" type="search" id="businessTypeSearch" placeholder="Search or choose your business type" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="businessTypeResults" required>
                 <div class="picker-results" id="businessTypeResults" role="listbox" aria-label="Business types"></div>
                 <input type="hidden" name="businessType" id="businessTypeValue">
                 <input class="business-type-other" name="businessTypeOther" placeholder="Enter your business type" hidden>
               </label>
-              <label>Number of Staff / Branches<input name="businessScale" placeholder="e.g. 5 staff, 1 location (optional)"></label>
-              <label>Project Budget (Optional)<input name="budget" placeholder="e.g. ₹10,000–₹25,000 or To be discussed"></label>
-              <label>Preferred Timeline (Optional)<input name="timeline" placeholder="e.g. Within 2 weeks / Flexible"></label>
               <label class="full service-required-field">Service Required *
                 <input class="service-search" type="search" id="serviceSearch" placeholder="Search and select a service" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="serviceResults" aria-describedby="serviceSelectionHint" required>
                 <div class="service-results" id="serviceResults" role="listbox" aria-label="Available services"></div>
@@ -2176,8 +2223,8 @@
       const status = document.getElementById('formStatus');
       const subject = encodeURIComponent('OJILZTAG.COM Enquiry - ' + data.service);
       const body = encodeURIComponent(
-        'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + (data.email || 'Not provided') +
-        '\nService: ' + data.service + '\nBusiness type: ' + (data.businessType || 'Not provided') + '\nBusiness scale: ' + (data.businessScale || 'Not provided') + '\nProject budget: ' + (data.budget || 'Not provided') + '\nPreferred timeline: ' + (data.timeline || 'Not provided') + '\n\nProject requirements and details:\n' + data.message
+        'Name: ' + data.name + '\nPhone: ' + data.phone +
+        '\nService: ' + data.service + '\nBusiness type: ' + (data.businessType || 'Not provided') + '\n\nProject requirements and details:\n' + data.message
       );
       const whatsappText = encodeURIComponent(
         '*OJILZTAG.COM — NEW ENQUIRY*\n' +
@@ -2185,11 +2232,8 @@
         '*Customer Details*\n' +
         'Name: ' + data.name + '\n' +
         'Mobile: ' + data.phone + '\n' +
-        'Email: ' + (data.email || 'Not provided') + '\n' +
         'Business type: ' + (data.businessType || 'Not provided') + '\n' +
-        'Staff / branches: ' + (data.businessScale || 'Not provided') + '\n' +
-        'Project budget: ' + (data.budget || 'Not provided') + '\n' +
-        'Preferred timeline: ' + (data.timeline || 'Not provided') + '\n\n' +
+        '\n' +
         '*Service Required*\n' +
         data.service + '\n\n' +
         '*Project Requirements & Details*\n' +
