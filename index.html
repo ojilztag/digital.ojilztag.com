@@ -1977,6 +1977,15 @@
       .serviq-approach-step{grid-template-columns:88px minmax(0,1fr);column-gap:8px;padding:10px}
       .serviq-approach-step .number{font-size:.6rem}
     }
+    /* SEO package card follows the same pricing-card treatment as the main pricing section */
+    .seo-price-card{width:100%;max-width:440px;margin:18px auto 0}
+    .seo-price-card .taglist{margin-top:auto;padding-top:13px}
+    .seo-price-card .starting-price{margin-top:14px}
+    .seo-price-note{max-width:900px;margin:12px auto 0;text-align:center}
+    /* Give the mobile navigation panel a little more visual depth below its last item */
+    @media(max-width:900px){
+      .navlinks,.navlinks.open{padding-bottom:30px!important}
+    }
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
@@ -2060,8 +2069,14 @@
    <article class="card"><div class="icon">🔎</div><h3>2. Search Console & Indexing Setup</h3><p>Set up Google Search Console, submit the XML sitemap, inspect priority URLs and submit indexing requests. Check sitemap discovery and explain how to monitor indexing status.</p><div class="taglist"><span class="tag">Search Console</span><span class="tag">XML Sitemap</span><span class="tag">URL Inspection</span></div></article>
    <article class="card"><div class="icon">⚡</div><h3>3. Technical SEO & Speed Review</h3><p>Review page titles, meta descriptions, canonical and robots directives, structured data, favicon and social sharing metadata. Run mobile and desktop PageSpeed Insights checks and identify practical improvements.</p><div class="taglist"><span class="tag">On-page SEO</span><span class="tag">Schema Review</span><span class="tag">PageSpeed Audit</span></div></article>
   </div>
-  <div class="price-note" style="margin-top:18px"><strong>One-time package price: ₹2,999</strong><br>Includes the listed starter setup for one website, basic verification and a handover summary. Google indexing and search rankings are controlled by Google and cannot be guaranteed. Ongoing SEO/content work, backlink campaigns, Google Ads, paid tools, domain/hosting renewals, third-party fees and major website redevelopment are not included unless separately agreed.</div>
-  <div class="hero-actions" style="margin-top:18px"><a class="btn" href="#contact" data-service="Google Search Visibility & SEO Starter Setup">Enquire About This Service ↗</a></div>
+  <article class="card seo-price-card">
+   <div class="icon">🔎</div>
+   <h3>Google Search & SEO Starter Setup</h3>
+   <p>One-time starter setup for one website, including the listed Google measurement, Search Console, technical SEO and PageSpeed review deliverables, with basic verification and a handover summary.</p>
+   <div class="taglist"><span class="tag">One Website</span><span class="tag">GA4 & Search Console</span><span class="tag">Technical SEO</span><span class="tag">PageSpeed Review</span></div>
+   <div class="starting-price">One-time setup <strong>₹2,999</strong></div>
+  </article>
+  <p class="notice seo-price-note">Google controls crawling, indexing and search rankings; these outcomes cannot be guaranteed. Ongoing SEO/content work, backlink campaigns, Google Ads, paid tools, domain/hosting renewals, third-party fees and major website redevelopment are excluded unless separately agreed.</p>
  </div>
 </section>
 
@@ -2439,7 +2454,6 @@
                     <option>API & Third-Party Technology Integration</option>
                     <option>Payment Gateway & Transaction Integration</option>
                     <option>Business Digitalization (SEO, Google Visibility & AI Search)</option>
-                    <option>Google Search Visibility & SEO Starter Setup</option>
                     <option>Data Migration, Import, Export & Dashboard Reporting</option>
                     <option>Custom Software / Web Application Development</option>
                   </optgroup>
@@ -2452,6 +2466,12 @@
                     <option>OJILZTAG.COM Beauty — Fashion & Talent Presentation</option>
                     <option>OJILZTAG.COM E-Books — Writing & Digital Publishing</option>
                     <option>Creative Campaigns & Brand Content</option>
+                  </optgroup>
+                  <optgroup label="Google Search, SEO & Analytics">
+                    <option>Google Search Visibility & SEO Starter Setup</option>
+                    <option>Google Analytics 4 Setup</option>
+                    <option>Google Search Console & Sitemap Setup</option>
+                    <option>Technical SEO & PageSpeed Review</option>
                   </optgroup>
                   <optgroup label="Marketing, Promotion & Visibility">
                     <option>Digital Marketing & Promotion</option>
