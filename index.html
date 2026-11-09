@@ -1534,6 +1534,21 @@
     }
 
   </style>
+  <script>
+    // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
+    (function () {
+      try {
+        var currentUrl = new URL(window.location.href);
+        if (currentUrl.searchParams.get("utm_source") === "chatgpt.com") {
+          currentUrl.searchParams.delete("utm_source");
+          var cleanUrl = currentUrl.pathname + (currentUrl.search ? currentUrl.search : "") + currentUrl.hash;
+          window.history.replaceState({}, document.title, cleanUrl);
+        }
+      } catch (error) {
+        // Leave the page URL unchanged if the browser does not support URL/history APIs.
+      }
+    })();
+  </script>
 </head>
 <body>
   <!--
