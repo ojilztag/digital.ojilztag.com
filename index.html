@@ -1786,6 +1786,89 @@
       #events .wrap.split>div{gap:10px!important}
       #events .featurebox{padding:16px!important;border-radius:18px!important}
     }
+
+    /* ServiQ business-conversion section: clear process, scope and next action */
+    .serviq-conversion{
+      margin-top:0;
+      padding:clamp(20px,3vw,34px);
+      border:1px solid #b9d9ed;
+      border-radius:22px;
+      background:linear-gradient(125deg,#f4f9ff,#f0f7ff 48%,#edfaf8);
+      box-shadow:0 12px 30px rgba(26,63,105,.07);
+      color:#173653;
+    }
+    .serviq-conversion-head{max-width:850px}
+    .serviq-conversion-head h2{
+      margin:12px 0;
+      color:#102d4b;
+      font-size:clamp(1.8rem,3.3vw,2.65rem);
+      line-height:1.12;
+      letter-spacing:-.035em;
+    }
+    .serviq-conversion-head p{color:#465d76;margin:0 0 10px}
+    .serviq-conversion-head .serviq-conversion-lead{
+      color:#244968;
+      font-size:1.08rem;
+      font-weight:650;
+      line-height:1.55;
+    }
+    .serviq-approach{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      margin-top:22px;
+    }
+    .serviq-approach-step{
+      padding:15px;
+      border:1px solid #d4e2f0;
+      border-radius:14px;
+      background:rgba(255,255,255,.82);
+    }
+    .serviq-approach-step strong{display:block;color:#123957;margin:8px 0 5px}
+    .serviq-approach-step small{display:block;color:#52677d;line-height:1.5}
+    .serviq-deliverables{
+      margin-top:14px;
+      padding:16px 18px;
+      border-radius:14px;
+      background:rgba(8,127,131,.07);
+      border:1px solid rgba(8,127,131,.16);
+      color:#244968;
+    }
+    .serviq-deliverables strong{color:#123957}
+    .serviq-deliverables ul{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:7px 20px;
+      margin:10px 0 0;
+      padding-left:19px;
+    }
+    .serviq-deliverables li{padding-left:2px}
+    .serviq-conversion-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid #d4e2f0;
+    }
+    .serviq-conversion-footer h3{margin:0 0 5px;color:#102d4b;font-size:1.25rem}
+    .serviq-conversion-footer p{margin:0;color:#52677d}
+    .serviq-conversion-footer .btn{flex-shrink:0;color:#fff}
+    @media(max-width:900px){
+      .serviq-approach{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:600px){
+      .serviq-conversion{padding:17px;border-radius:18px}
+      .serviq-conversion-head h2{font-size:1.75rem}
+      .serviq-conversion-head .serviq-conversion-lead{font-size:1rem}
+      .serviq-approach{gap:8px;margin-top:16px}
+      .serviq-approach-step{padding:12px}
+      .serviq-deliverables{padding:13px}
+      .serviq-deliverables ul{grid-template-columns:1fr;gap:5px}
+      .serviq-conversion-footer{align-items:stretch;flex-direction:column;gap:12px;margin-top:14px;padding-top:14px}
+      .serviq-conversion-footer .btn{width:100%}
+    }
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
@@ -1819,7 +1902,7 @@
       <a class="brand" href="#home" aria-label="OJILZTAG.COM — Digital Solutions and Technology"><span class="brand-name"><span class="brand-core">OJILZTAG</span><span class="brand-domain">.COM</span></span><small class="brand-caption">CUSTOMIZED DIGITAL SIGNATURE</small></a>
       <button class="menu" id="menuBtn" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-haspopup="true" aria-expanded="false">☰ Menu</button>
       <nav class="navlinks" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#services">Services</a><a href="#serviq">SERVIQ</a><a href="#pricing">Pricing</a><a href="#capabilities">Framework</a><a href="#events">Events</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#leadership">Who's CEO</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#serviq">ServiQ</a><a href="#pricing">Pricing</a><a href="#capabilities">Framework</a><a href="#events">Events</a><a href="#creative-media">Creative</a><a href="#projects">Projects</a><a href="#leadership">Who's CEO</a><a href="#contact">Contact</a>
       </nav>
       <a class="btn navcta" href="#contact">Start a Project ↗</a>
     </div>
@@ -1852,14 +1935,14 @@
    <article class="card"><img class="card-visual" src="/assets/visual-website.svg" alt="Website and online presence illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Digital Presence & Online Business</h3><p>Websites, domains, hosting, online stores, discoverability and digital promotion for businesses and projects.</p><div class="link-row"><a class="btn outline" href="#capabilities">Explore business framework ↗</a></div></article>
    <article class="card"><img class="card-visual" src="/assets/visual-automation.svg" alt="Connected AI systems and workflow automation illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Custom Systems & Automation</h3><p>Automated communication, AI, CRM, connected workflows, payment processes and management software designed around real operational needs.</p><div class="link-row"><a class="btn outline" href="#systems">Explore technology solutions ↗</a></div></article>
    <article class="card"><img class="card-visual" src="/assets/visual-creative.svg" alt="Creative media camera and video production illustration" width="640" height="420" loading="lazy" decoding="async"><h3>Creative Media & Production</h3><p>Design, video, music, photography, publishing and brand content through AI-assisted or human-led production.</p><div class="link-row"><a class="btn outline" href="#creative-media">Explore creative services ↗</a></div></article>
-   <article class="card"><img class="card-visual" src="/assets/visual-crm.svg" alt="Business management dashboard and connected service operations" width="640" height="420" loading="lazy" decoding="async"><h3>Business Management Platforms</h3><p>Manage customers, appointments, staff, services, billing and payments with SERVIQ — one platform designed for multiple types of service businesses.</p><div class="link-row"><a class="btn outline" href="#serviq">Explore SERVIQ ↗</a></div></article>
+   <article class="card"><img class="card-visual" src="/assets/visual-crm.svg" alt="Business management dashboard and connected service operations" width="640" height="420" loading="lazy" decoding="async"><h3>Business Management Platforms</h3><p>Manage customers, appointments, staff, services, billing and payments with ServiQ — one platform designed for multiple types of service businesses.</p><div class="link-row"><a class="btn outline" href="#serviq">Explore ServiQ ↗</a></div></article>
   </div>
  </div>
 </section>
 
 <section class="section alt" id="serviq">
  <div class="wrap">
-  <div class="section-head"><span class="eyebrow">Business Management · One-time Setup</span><h2>SERVIQ — One Platform. Multiple Businesses.</h2><p>SERVIQ is a configurable business operations platform concept for businesses that receive customers, accept bookings or service requests, assign staff, collect payments and need a clear daily record. Bring front-desk activity, service delivery and payment tracking into one organized workflow instead of managing everything through separate notebooks, messages and spreadsheets.</p></div>
+  <div class="section-head"><span class="eyebrow">Business Management · One-time Setup</span><h2>ServiQ — One Platform. Multiple Businesses.</h2><p>ServiQ is a configurable business operations platform concept for businesses that receive customers, accept bookings or service requests, assign staff, collect payments and need a clear daily record. Bring front-desk activity, service delivery and payment tracking into one organized workflow instead of managing everything through separate notebooks, messages and spreadsheets.</p></div>
   <div class="section-head"><span class="eyebrow">Core management modules</span><h2>What can the platform manage?</h2><p>Select the modules your business actually needs. The final dashboard and user permissions are planned around your operating process.</p></div>
   <div class="grid">
    <article class="card"><div class="icon">🧑‍💼</div><h3>Customer Registration & Profiles</h3><p>Capture customer contact details, maintain visit history, record preferences and retrieve customer information for repeat visits.</p><div class="taglist"><span class="tag">Customer Records</span><span class="tag">Visit History</span></div></article>
@@ -1871,7 +1954,7 @@
    <article class="card"><div class="icon">🔔</div><h3>Reminders & Customer Follow-ups</h3><p>Plan appointment reminders, service follow-ups and customer notifications across connected communication channels. Provider charges, consent and message-template rules may apply.</p><div class="taglist"><span class="tag">Reminders</span><span class="tag">Follow-ups</span><span class="tag">Notifications</span></div></article>
    <article class="card"><div class="icon">📊</div><h3>Dashboard & Business Reports</h3><p>Review daily bookings, completed services, staff activity, sales totals and outstanding payments through reports suited to the selected modules.</p><div class="taglist"><span class="tag">Daily Summary</span><span class="tag">Sales Reports</span><span class="tag">Operations</span></div></article>
   </div>
-  <div class="section-head" style="margin-top:38px"><span class="eyebrow">Who can use SERVIQ?</span><h2>Designed for customer-facing and service-based businesses.</h2><p>The same core framework can be configured for different industries. Each business receives a relevant service catalogue, workflow and dashboard rather than a generic one-size-fits-all setup.</p></div>
+  <div class="section-head" style="margin-top:38px"><span class="eyebrow">Who can use ServiQ?</span><h2>Designed for customer-facing and service-based businesses.</h2><p>The same core framework can be configured for different industries. Each business receives a relevant service catalogue, workflow and dashboard rather than a generic one-size-fits-all setup.</p></div>
   <div class="grid">
    <article class="card"><div class="icon">💇</div><h3>Beauty Parlours & Hair Salons</h3><p>Manage walk-ins, appointments, stylists, beauty services, packages, customer visits, bills and repeat-visit follow-ups.</p></article>
    <article class="card"><div class="icon">💆</div><h3>Spas & Wellness Centres</h3><p>Organize treatment slots, therapists, session durations, service packages, customer bookings and payment records.</p></article>
@@ -1890,7 +1973,28 @@
    <article class="card"><div class="icon">🏬</div><h3>Multi-Branch / Custom</h3><p>Multiple locations, branch-level access, centralized reporting, advanced integrations or specialized operational rules assessed as a custom project.</p><div class="starting-price">One-time price <strong>Custom Quote</strong></div><div class="taglist"><span class="tag">Multiple Locations</span><span class="tag">Advanced Roles</span><span class="tag">Custom Scope</span></div></article>
   </div>
   <div class="price-note"><strong>What the one-time setup price means:</strong> The starting price is an indicative implementation fee, not a promise that every module is included. The approved quotation will list the exact features, number of users or locations, setup, testing, training or handover, revisions and delivery timeline. Domain, hosting, database or cloud usage, paid software, SMS, WhatsApp and other messaging provider fees, payment gateway charges, taxes and ongoing maintenance are separate unless expressly included. New features requested after approval may require a separate quotation.</div>
-  <div class="cta" id="discussion" style="margin-top:0"><div><span class="eyebrow">Free Discussion · One-time Setup</span><h2>Plan SERVIQ Around Your Business?</h2><p>Share your business type, staff or branch count, customer flow and payment process. We will review the required modules and prepare a written scope and one-time setup estimate before any work begins.</p></div></div>
+  <div class="serviq-conversion" id="discussion">
+    <div class="serviq-conversion-head">
+      <span class="eyebrow">Business system planning · Requirement analysis</span>
+      <h2>Your Business. Your Workflow. One Connected System.</h2>
+      <p class="serviq-conversion-lead">We plan digital systems around the way your business actually works — connecting customer management, staff operations, appointments, billing, payments and reports in one organized workflow.</p>
+      <p>Tell us how customers arrive, how your team delivers services and how payments are recorded. We will identify the right modules instead of pushing an unnecessary one-size-fits-all package.</p>
+    </div>
+    <div class="serviq-approach">
+      <div class="serviq-approach-step"><span class="number">01 · UNDERSTAND</span><strong>Review your business</strong><small>Map your current process, customer flow, team and operational needs.</small></div>
+      <div class="serviq-approach-step"><span class="number">02 · PLAN</span><strong>Define the system</strong><small>Select relevant modules, user roles, workflows and integrations.</small></div>
+      <div class="serviq-approach-step"><span class="number">03 · ESTIMATE</span><strong>Confirm the scope</strong><small>Prepare a written feature list, delivery estimate and quotation.</small></div>
+      <div class="serviq-approach-step"><span class="number">04 · BUILD & HANDOVER</span><strong>Deliver the agreed solution</strong><small>Develop, test and hand over the approved system with agreed guidance.</small></div>
+    </div>
+    <div class="serviq-deliverables">
+      <strong>What you receive before development</strong>
+      <ul><li>Clear project scope and module breakdown</li><li>Estimated implementation timeline</li><li>Written quotation and payment milestones</li><li>Agreed testing and handover details</li></ul>
+    </div>
+    <div class="serviq-conversion-footer">
+      <div><h3>Let's map your business requirements.</h3><p>Start with a discussion. Development begins only after you review and approve the agreed scope and quotation.</p></div>
+      <a class="btn" href="#contact">Discuss Your Business Project ↗</a>
+    </div>
+  </div>
  </div>
 </section>
 
@@ -2160,7 +2264,7 @@
                   <optgroup label="Business Management, CRM & Operations">
                     <option>Business & Organization Management System</option>
                     <option>CRM & Customer Relationship Management System</option>
-                    <option>SERVIQ — Business Management Platform</option>
+                    <option>ServiQ — Business Management Platform</option>
                     <option>Customer Registration, Profiles & Visit History</option>
                     <option>Appointment, Booking, Queue & Check-in Management</option>
                     <option>Service Centre, Garage, Vehicle & Job Card Management</option>
