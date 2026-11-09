@@ -1982,11 +1982,21 @@
     .seo-price-card .taglist{margin-top:auto;padding-top:13px}
     .seo-price-card .starting-price{margin-top:14px}
     .seo-price-note{max-width:900px;margin:12px 0 0;text-align:left}
-    /* Give the mobile navigation panel a little more visual depth below its last item */
+    /* Keep the mobile menu compact, with a small rounded finish below Contact and no motion. */
     @media(max-width:900px){
       .navlinks,.navlinks.open{
         max-height:min(78vh,680px)!important;
-        padding-bottom:68px!important;
+        gap:2px!important;
+        padding:10px 10px 14px!important;
+        transition:none!important;
+        animation:none!important;
+        transform:none!important;
+      }
+      .navlinks a{
+        min-height:40px!important;
+        padding:7px 12px!important;
+        transition:none!important;
+        animation:none!important;
       }
     }
 </style>
