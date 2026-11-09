@@ -1632,6 +1632,27 @@
     @media(prefers-reduced-motion:reduce){
       .promo-card-visual::after{animation:none}
     }
+
+    /* Project details field: keep the full prompt and entered text visible on every screen */
+    #enquiryForm textarea[name="message"]{
+      box-sizing:border-box!important;
+      min-height:190px!important;
+      height:190px;
+      padding:15px 16px!important;
+      line-height:1.55!important;
+      white-space:pre-wrap;
+      overflow-y:hidden!important;
+      resize:vertical!important;
+      overflow-wrap:anywhere;
+    }
+    @media(max-width:600px){
+      #enquiryForm textarea[name="message"]{
+        min-height:215px!important;
+        height:215px;
+        padding:15px 14px!important;
+        line-height:1.55!important;
+      }
+    }
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
@@ -2314,6 +2335,22 @@
         submitButton.removeAttribute('aria-disabled');
       }
     });
+  </script>
+
+  <script>
+    // Expand the project-details field to fit its text instead of clipping it.
+    (function(){
+      const field=document.querySelector('#enquiryForm textarea[name="message"]');
+      if(!field)return;
+      const fitField=()=>{
+        field.style.height='auto';
+        field.style.height=Math.max(field.scrollHeight,window.matchMedia('(max-width:600px)').matches?215:190)+'px';
+      };
+      field.addEventListener('input',fitField);
+      field.addEventListener('change',fitField);
+      window.addEventListener('resize',fitField);
+      requestAnimationFrame(fitField);
+    })();
   </script>
 </body>
 </html>
