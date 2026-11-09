@@ -1978,13 +1978,16 @@
       .serviq-approach-step .number{font-size:.6rem}
     }
     /* SEO package card follows the same pricing-card treatment as the main pricing section */
-    .seo-price-card{width:100%;max-width:440px;margin:18px auto 0}
+    .seo-price-card{width:100%;max-width:440px;margin:18px 0 0}
     .seo-price-card .taglist{margin-top:auto;padding-top:13px}
     .seo-price-card .starting-price{margin-top:14px}
-    .seo-price-note{max-width:900px;margin:12px auto 0;text-align:center}
+    .seo-price-note{max-width:900px;margin:12px 0 0;text-align:left}
     /* Give the mobile navigation panel a little more visual depth below its last item */
     @media(max-width:900px){
-      .navlinks,.navlinks.open{padding-bottom:30px!important}
+      .navlinks,.navlinks.open{
+        max-height:min(78vh,680px)!important;
+        padding-bottom:68px!important;
+      }
     }
 </style>
   <script>
