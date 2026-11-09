@@ -1387,6 +1387,25 @@
     @media(max-width:600px){#enquiryForm .picker-results,#enquiryForm .service-results{max-height:230px}#enquiryForm .picker-option,#enquiryForm .service-option{padding:11px;font-size:.84rem}}
 
   
+    /* Project requirements textarea — comfortable reading and writing space */
+    #enquiryForm textarea[name="message"]{
+      min-height:260px!important;
+      height:260px;
+      padding:15px 16px!important;
+      line-height:1.55!important;
+      resize:vertical!important;
+      overflow-y:auto;
+      white-space:pre-wrap;
+    }
+    @media(max-width:600px){
+      #enquiryForm textarea[name="message"]{
+        min-height:280px!important;
+        height:280px;
+        padding:15px 16px!important;
+        line-height:1.55!important;
+      }
+    }
+
     /* Final contrast correction for the light enquiry panel */
     #enquiryForm label,
     #enquiryForm .service-required-field,
