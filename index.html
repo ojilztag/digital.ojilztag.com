@@ -1787,14 +1787,15 @@
       #events .featurebox{padding:16px!important;border-radius:18px!important}
     }
 
-    /* ServiQ business-conversion section: clear process, scope and next action */
+
+    /* ServiQ conversion panel — refined mobile-first finish */
     .serviq-conversion{
       margin-top:0;
       padding:clamp(20px,3vw,34px);
       border:1px solid #b9d9ed;
       border-radius:22px;
-      background:linear-gradient(125deg,#f4f9ff,#f0f7ff 48%,#edfaf8);
-      box-shadow:0 12px 30px rgba(26,63,105,.07);
+      background:linear-gradient(135deg,#f7fbff 0%,#eff7ff 52%,#eefaf8 100%);
+      box-shadow:0 10px 28px rgba(26,63,105,.065);
       color:#173653;
     }
     .serviq-conversion-head{max-width:850px}
@@ -1805,69 +1806,90 @@
       line-height:1.12;
       letter-spacing:-.035em;
     }
-    .serviq-conversion-head p{color:#465d76;margin:0 0 10px}
+    .serviq-conversion-head p{color:#52677d;margin:0 0 10px;line-height:1.6}
     .serviq-conversion-head .serviq-conversion-lead{
-      color:#244968;
-      font-size:1.08rem;
-      font-weight:650;
-      line-height:1.55;
+      color:#244968;font-size:1.08rem;font-weight:650;line-height:1.55;
     }
     .serviq-approach{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-      margin-top:22px;
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;margin-top:22px;
     }
     .serviq-approach-step{
-      padding:15px;
-      border:1px solid #d4e2f0;
-      border-radius:14px;
-      background:rgba(255,255,255,.82);
+      min-width:0;padding:15px;border:1px solid #d6e4ef;border-radius:14px;
+      background:rgba(255,255,255,.88);
     }
-    .serviq-approach-step strong{display:block;color:#123957;margin:8px 0 5px}
+    .serviq-approach-step strong{display:block;color:#123957;margin:8px 0 5px;line-height:1.3}
     .serviq-approach-step small{display:block;color:#52677d;line-height:1.5}
     .serviq-deliverables{
-      margin-top:14px;
-      padding:16px 18px;
-      border-radius:14px;
-      background:rgba(8,127,131,.07);
-      border:1px solid rgba(8,127,131,.16);
-      color:#244968;
+      margin-top:14px;padding:16px 18px;border-radius:14px;
+      background:#eaf6f5;border:1px solid #cde7e4;color:#244968;
     }
     .serviq-deliverables strong{color:#123957}
     .serviq-deliverables ul{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:7px 20px;
-      margin:10px 0 0;
-      padding-left:19px;
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:7px 20px;margin:10px 0 0;padding-left:19px;
     }
-    .serviq-deliverables li{padding-left:2px}
+    .serviq-deliverables li{padding-left:2px;line-height:1.5}
     .serviq-conversion-footer{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid #d4e2f0;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      margin-top:18px;padding-top:18px;border-top:1px solid #d4e2f0;
     }
-    .serviq-conversion-footer h3{margin:0 0 5px;color:#102d4b;font-size:1.25rem}
-    .serviq-conversion-footer p{margin:0;color:#52677d}
+    .serviq-conversion-footer h3{margin:0 0 5px;color:#102d4b;font-size:1.25rem;line-height:1.3}
+    .serviq-conversion-footer p{margin:0;color:#52677d;line-height:1.55}
     .serviq-conversion-footer .btn{flex-shrink:0;color:#fff}
-    @media(max-width:900px){
-      .serviq-approach{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
+    @media(max-width:900px){.serviq-approach{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:600px){
-      .serviq-conversion{padding:17px;border-radius:18px}
-      .serviq-conversion-head h2{font-size:1.75rem}
-      .serviq-conversion-head .serviq-conversion-lead{font-size:1rem}
-      .serviq-approach{gap:8px;margin-top:16px}
-      .serviq-approach-step{padding:12px}
-      .serviq-deliverables{padding:13px}
-      .serviq-deliverables ul{grid-template-columns:1fr;gap:5px}
-      .serviq-conversion-footer{align-items:stretch;flex-direction:column;gap:12px;margin-top:14px;padding-top:14px}
-      .serviq-conversion-footer .btn{width:100%}
+      .serviq-conversion{
+        padding:18px 15px 16px!important;
+        border-radius:18px;
+        box-shadow:0 7px 18px rgba(26,63,105,.055);
+      }
+      .serviq-conversion-head .eyebrow{font-size:.66rem;letter-spacing:.11em;line-height:1.4}
+      .serviq-conversion-head h2{
+        margin:9px 0 10px;
+        font-size:clamp(1.48rem,6.1vw,1.72rem);
+        line-height:1.17;letter-spacing:-.03em;
+      }
+      .serviq-conversion-head .serviq-conversion-lead{font-size:.94rem;line-height:1.5;margin-bottom:8px}
+      .serviq-conversion-head p{font-size:.88rem;line-height:1.52;margin-bottom:0}
+      .serviq-approach{
+        grid-template-columns:minmax(0,1fr);
+        gap:7px;margin-top:15px;
+      }
+      .serviq-approach-step{
+        display:grid;grid-template-columns:104px minmax(0,1fr);
+        grid-template-rows:auto auto;column-gap:10px;align-items:start;
+        padding:11px 12px;border-radius:12px;
+      }
+      .serviq-approach-step .number{
+        grid-column:1;grid-row:1 / span 2;
+        padding-top:2px;font-size:.65rem;line-height:1.45;
+        letter-spacing:.045em;overflow-wrap:anywhere;
+      }
+      .serviq-approach-step strong{grid-column:2;grid-row:1;margin:0 0 3px;font-size:.88rem}
+      .serviq-approach-step small{grid-column:2;grid-row:2;font-size:.78rem;line-height:1.42}
+      .serviq-deliverables{margin-top:11px;padding:12px 13px;border-radius:12px}
+      .serviq-deliverables strong{font-size:.88rem}
+      .serviq-deliverables ul{
+        grid-template-columns:minmax(0,1fr);
+        gap:5px;margin-top:8px;padding-left:17px;
+      }
+      .serviq-deliverables li{font-size:.81rem;line-height:1.42}
+      .serviq-conversion-footer{
+        align-items:stretch;flex-direction:column;gap:10px;
+        margin-top:13px;padding-top:13px;
+      }
+      .serviq-conversion-footer h3{font-size:1.08rem}
+      .serviq-conversion-footer p{font-size:.82rem;line-height:1.48}
+      .serviq-conversion-footer .btn{
+        width:100%;min-height:48px;padding:12px 15px;
+        font-size:.9rem;white-space:normal;text-align:center;
+      }
+    }
+    @media(max-width:360px){
+      .serviq-conversion{padding:15px 12px!important}
+      .serviq-approach-step{grid-template-columns:88px minmax(0,1fr);column-gap:8px;padding:10px}
+      .serviq-approach-step .number{font-size:.6rem}
     }
 </style>
   <script>
