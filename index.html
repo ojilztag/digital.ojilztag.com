@@ -1653,7 +1653,80 @@
         line-height:1.55!important;
       }
     }
-</style>
+
+    /* OJILZTAG.COM — refined digital-signature brand caption */
+    .nav .brand{
+      gap:2px!important;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      line-height:1.02;
+    }
+    .nav .brand-name{
+      display:inline-flex;
+      align-items:baseline;
+      line-height:1;
+      letter-spacing:.025em;
+    }
+    .nav .brand-caption{
+      position:relative;
+      display:inline-block;
+      margin-top:1px!important;
+      padding:2px 5px 5px;
+      max-width:100%;
+      color:#24516f!important;
+      font-size:clamp(.52rem,.62vw,.66rem)!important;
+      font-weight:900!important;
+      letter-spacing:.105em!important;
+      line-height:1.15;
+      white-space:nowrap;
+      background:linear-gradient(100deg,#245fc0 0%,#008e9c 35%,#6752bd 68%,#245fc0 100%);
+      background-size:220% 100%;
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:ojilztag-caption-shimmer 7s ease-in-out infinite;
+    }
+    .nav .brand-caption::after{
+      content:"";
+      position:absolute;
+      left:13%;
+      right:13%;
+      bottom:0;
+      height:2px;
+      border-radius:99px;
+      background:linear-gradient(90deg,transparent,#3b83d5 22%,#08a6a4 52%,#8065d3 78%,transparent);
+      background-size:200% 100%;
+      opacity:.78;
+      transform-origin:center;
+      animation:ojilztag-signature-line 4.8s ease-in-out infinite;
+    }
+    @keyframes ojilztag-caption-shimmer{
+      0%,100%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+    }
+    @keyframes ojilztag-signature-line{
+      0%,100%{opacity:.48;transform:scaleX(.88)}
+      50%{opacity:1;transform:scaleX(1)}
+    }
+    @media(max-width:900px){
+      .nav .brand-caption{font-size:.49rem!important;letter-spacing:.085em!important}
+    }
+    @media(max-width:600px){
+      .nav .brand{gap:2px!important}
+      .nav .brand-name{font-size:1.08rem!important}
+      .nav .brand-caption{font-size:.46rem!important;letter-spacing:.075em!important;padding:2px 3px 5px}
+      .nav .brand-caption::after{left:15%;right:15%}
+    }
+    @media(max-width:380px){
+      .nav .brand-name{font-size:1rem!important}
+      .nav .brand-caption{font-size:.405rem!important;letter-spacing:.055em!important}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .nav .brand-caption,.nav .brand-caption::after{animation:none!important}
+    }
+
+  </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
     (function () {
