@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Google search analytics and SEO illustration</title>
+<desc id="desc">A search performance dashboard with a Google-inspired search symbol, analytics bars and magnifying glass.</desc>
+<defs>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbff"/><stop offset="1" stop-color="#e7f4ff"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4285f4"/><stop offset="1" stop-color="#34a853"/></linearGradient>
+</defs>
+<rect x="42" y="38" width="556" height="284" rx="30" fill="url(#panel)" stroke="#c9e1f5" stroke-width="4"/>
+<rect x="78" y="75" width="315" height="210" rx="18" fill="#fff" stroke="#d9e8f5" stroke-width="3"/>
+<rect x="103" y="99" width="142" height="14" rx="7" fill="#b8cce0"/>
+<rect x="103" y="130" width="260" height="2" fill="#e5edf5"/>
+<rect x="112" y="210" width="38" height="48" rx="7" fill="#fbbc05"/>
+<rect x="166" y="179" width="38" height="79" rx="7" fill="#4285f4"/>
+<rect x="220" y="153" width="38" height="105" rx="7" fill="#34a853"/>
+<rect x="274" y="188" width="38" height="70" rx="7" fill="#ea4335"/>
+<path d="M422 124a67 67 0 1 1 0 134a67 67 0 0 1 0-134" fill="#fff" stroke="#4285f4" stroke-width="15"/>
+<path d="M475 242l66 66" stroke="#34a853" stroke-width="22" stroke-linecap="round"/>
+<path d="M450 151a39 39 0 0 0-55 54" fill="none" stroke="#ea4335" stroke-width="14" stroke-linecap="round"/>
+<path d="M395 205a39 39 0 0 0 56 28" fill="none" stroke="#fbbc05" stroke-width="14" stroke-linecap="round"/>
+<path d="M451 233a39 39 0 0 0 12-48" fill="none" stroke="#34a853" stroke-width="14" stroke-linecap="round"/>
+<path d="M463 185h-27" stroke="#4285f4" stroke-width="14" stroke-linecap="round"/>
+<circle cx="117" cy="285" r="5" fill="#4285f4"/><circle cx="137" cy="285" r="5" fill="#34a853"/><circle cx="157" cy="285" r="5" fill="#fbbc05"/>
+</svg>
