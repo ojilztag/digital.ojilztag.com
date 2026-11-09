@@ -1732,6 +1732,60 @@
       .section-head h3,
       .section > .wrap > h2{animation:none!important}
     }
+
+    /* Targeted spacing refinements from mobile layout review */
+    #about{
+      padding-bottom:10px!important;
+    }
+    #payment-policy{
+      padding-top:8px!important;
+    }
+    #payment-policy .policy-panel{
+      margin:8px 0 14px!important;
+    }
+    #payment-policy .policy-grid{
+      align-items:stretch;
+      gap:10px;
+      margin-top:16px;
+    }
+    #payment-policy .policy-item{
+      min-height:0!important;
+      height:auto!important;
+      padding:14px!important;
+    }
+    #events .wrap.split{
+      align-items:start!important;
+      gap:22px!important;
+    }
+    #events .wrap.split>div{
+      justify-content:flex-start!important;
+      gap:14px!important;
+      min-height:0!important;
+      height:auto!important;
+    }
+    #events .featurebox{
+      align-self:start;
+      height:auto!important;
+      min-height:0!important;
+      padding:22px!important;
+    }
+    @media(max-width:900px){
+      #events .wrap.split{gap:16px!important}
+      #events .wrap.split>div{gap:12px!important}
+    }
+    @media(max-width:600px){
+      #about{padding-bottom:6px!important}
+      #payment-policy{padding-top:6px!important}
+      #payment-policy .policy-panel{
+        margin:6px 0 12px!important;
+        padding:16px!important;
+      }
+      #payment-policy .policy-grid{gap:8px;margin-top:13px}
+      #payment-policy .policy-item{padding:13px!important}
+      #events .wrap.split{gap:14px!important}
+      #events .wrap.split>div{gap:10px!important}
+      #events .featurebox{padding:16px!important;border-radius:18px!important}
+    }
 </style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
