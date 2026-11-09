@@ -1533,7 +1533,28 @@
       box-shadow:0 0 0 3px rgba(49,133,201,.13)!important;
     }
 
-  </style>
+  
+    /* CONTACT SECTION — remove excess vertical space and keep the promo card independent */
+    .contact-section{padding-block:54px}
+    .contact-heading{margin-bottom:22px}
+    .contact-grid{align-items:stretch}
+    .contact-info,.formbox{height:auto;min-height:0}
+    .brand-promo-card{width:100%;max-width:1120px;margin:18px auto 0}
+    @media(min-width:901px){
+      .contact-section{padding-block:60px}
+      .contact-heading{margin-bottom:24px}
+      .brand-promo-card{margin-top:20px}
+    }
+    @media(max-width:900px){
+      .contact-section{padding-block:40px}
+      .contact-heading{margin-bottom:18px}
+    }
+    @media(max-width:600px){
+      .contact-section{padding-block:32px}
+      .contact-heading{margin-bottom:16px}
+      .brand-promo-card{margin-top:14px}
+    }
+</style>
   <script>
     // Remove only ChatGPT's outbound attribution parameter; preserve all other query parameters and the page hash.
     (function () {
@@ -1994,7 +2015,10 @@
               <p class="form-note">This website prepares your enquiry in WhatsApp. Your message is sent only after you review it and press Send in WhatsApp. Read our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
               <p id="formStatus" class="form-note" role="status" aria-live="polite"></p>
             </form>
-            <div class="brand-promo-card">
+            
+          </div>
+        </div>
+        <div class="brand-promo-card">
               <div class="promo-card-glow" aria-hidden="true"></div>
               <div class="promo-card-main">
                 <div class="promo-card-topline"><span class="promo-spark">✦</span><span>THE OJILZTAG DIFFERENCE</span><span class="promo-topline-rule"></span><span class="promo-edition">BUILT AROUND YOU</span></div>
@@ -2011,8 +2035,7 @@
               </div>
               <div class="promo-card-footer"><span>START SMALL. THINK BIG. BUILD SMART.</span><span class="promo-footer-mark">OJILZTAG<span>.COM</span></span></div>
             </div>
-          </div>
-        </div>
+
       </div>
     </section>
   </main>
